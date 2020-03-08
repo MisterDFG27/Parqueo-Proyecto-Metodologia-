@@ -1,9 +1,11 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author andre
@@ -26,21 +28,220 @@ public class factura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtfecha = new javax.swing.JTextField();
+        txtplaca = new javax.swing.JTextField();
+        txts = new javax.swing.JTextField();
+        txte = new javax.swing.JTextField();
+        cmbvehiculo = new javax.swing.JComboBox<>();
+        btncalcular = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtarea = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Fecha");
+
+        jLabel2.setText("Placa");
+
+        jLabel3.setText("Vehiculo");
+
+        jLabel4.setText("Hora de entrada");
+
+        jLabel5.setText("Hora de salida");
+
+        jLabel6.setText("total de tiempo");
+
+        jLabel7.setText("jLabel7");
+
+        jLabel8.setText("jLabel8");
+
+        jLabel9.setText("jLabel9");
+
+        cmbvehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "liviano", "pesado", "moto" }));
+
+        btncalcular.setText("calcular");
+        btncalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncalcularActionPerformed(evt);
+            }
+        });
+
+        txtarea.setColumns(20);
+        txtarea.setRows(5);
+        jScrollPane1.setViewportView(txtarea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txts, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtfecha)
+                                    .addComponent(txtplaca)
+                                    .addComponent(cmbvehiculo, 0, 76, Short.MAX_VALUE))))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btncalcular)
+                        .addGap(134, 134, 134))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtplaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btncalcular)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(cmbvehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btncalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncalcularActionPerformed
+
+        int fecha = Integer.parseInt(txtfecha.getText());
+        int placa = Integer.parseInt(txtplaca.getText());
+        int entrada = Integer.parseInt(txte.getText());
+        int salida = Integer.parseInt(txts.getText());
+        int monto1 = 0;
+        int tiempo = 0;
+        int monto2 = 0;
+        int total = 0;
+
+        if (cmbvehiculo.getSelectedIndex() == 1) {
+            monto1 = 600;
+            tiempo = 0;
+            monto2 = monto1 * tiempo;
+            total = monto1 + monto2;
+            
+            txtarea.setText("Fecha:" + fecha
+                    + "Placa:" + placa
+                    + "Tipo de vehiculo:" + "Liviano"
+                    + "Hora de entrada:" + entrada
+                    + "Hora de salida:" + salida
+                    + "tiempo total:" + tiempo
+                    + "monto por 3 horas:" + monto1
+                    + "monto extra:" + monto2
+                    + "total a pagar:" + total);
+
+        } else if (cmbvehiculo.getSelectedIndex() == 2) {
+            monto1 = 750;
+            tiempo = 0;
+            monto2 = monto1 * tiempo;
+            total = monto1 + monto2;
+
+            txtarea.setText("Fecha:" + fecha
+                    + "Placa:" + placa
+                    + "Tipo de vehiculo:" + "Liviano"
+                    + "Hora de entrada:" + entrada
+                    + "Hora de salida:" + salida
+                    + "tiempo total:" + tiempo
+                    + "monto por 3 horas:" + monto1
+                    + "monto extra:" + monto2
+                    + "total a pagar:" + total);
+
+        } else if (cmbvehiculo.getSelectedIndex() == 3) {
+            monto1 = 500;
+            tiempo = 0;
+            monto2 = monto1 * tiempo;
+            total = monto1 + monto2;
+
+            txtarea.setText("Fecha:" + fecha
+                    + "Placa:" + placa
+                    + "Tipo de vehiculo:" + "Liviano"
+                    + "Hora de entrada:" + entrada
+                    + "Hora de salida:" + salida
+                    + "tiempo total:" + tiempo
+                    + "monto por 3 horas:" + monto1
+                    + "monto extra:" + monto2
+                    + "total a pagar:" + total);
+
+        }
+        JOptionPane.showMessageDialog(null, "Fecha:" + fecha
+                + "Placa:" + placa
+                + "Tipo de vehiculo:" + "Liviano"
+                + "Hora de entrada:" + entrada
+                + "Hora de salida:" + salida
+                + "tiempo total:" + tiempo
+                + "monto por 3 horas:" + monto1
+                + "monto extra:" + monto2
+                + "total a pagar:" + total);
+
+
+    }//GEN-LAST:event_btncalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +279,22 @@ public class factura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncalcular;
+    private javax.swing.JComboBox<String> cmbvehiculo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtarea;
+    private javax.swing.JTextField txte;
+    private javax.swing.JTextField txtfecha;
+    private javax.swing.JTextField txtplaca;
+    private javax.swing.JTextField txts;
     // End of variables declaration//GEN-END:variables
 }
