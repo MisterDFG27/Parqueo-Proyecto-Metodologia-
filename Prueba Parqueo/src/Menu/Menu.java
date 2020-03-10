@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -61,11 +62,14 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.setBackground(new java.awt.Color(153, 255, 204));
 
+        jMenu4.setText("Comprar tiquete");
+        jMenuBar1.add(jMenu4);
+
         jMenu1.setBackground(new java.awt.Color(204, 255, 204));
         jMenu1.setText("Consulta");
         jMenuBar1.add(jMenu1);
 
-        jMenu3.setText("                                                                                                                                                                                             ");
+        jMenu3.setText("                                                                                                                                                            ");
         jMenuBar1.add(jMenu3);
 
         jMenu2.setText("Cerrar sesion");
@@ -121,6 +125,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

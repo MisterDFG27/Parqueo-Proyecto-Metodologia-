@@ -9,6 +9,11 @@
         </Property>
       </Properties>
       <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Comprar tiquete"/>
+          </Properties>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -19,7 +24,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="                                                                                                                                                                                             "/>
+            <Property name="text" type="java.lang.String" value="                                                                                                                                                            "/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
