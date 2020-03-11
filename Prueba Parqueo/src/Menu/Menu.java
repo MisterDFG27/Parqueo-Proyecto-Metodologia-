@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -60,6 +61,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel6.setText("#");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 280));
 
         jMenuBar1.setBackground(new java.awt.Color(153, 255, 204));
 
@@ -128,5 +130,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
