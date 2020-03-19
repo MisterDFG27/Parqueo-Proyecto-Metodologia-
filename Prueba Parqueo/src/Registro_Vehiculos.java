@@ -1,3 +1,6 @@
+
+import Menu.Menu;
+
 public class Registro_Vehiculos extends javax.swing.JFrame {
 
     /**
