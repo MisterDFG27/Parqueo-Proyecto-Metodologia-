@@ -14,24 +14,18 @@ public class Reporte_2 extends javax.swing.JFrame {
 
     void mostrardatos(String valor) {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("id_registo");
-        modelo.addColumn("númeroPlaca");
-        modelo.addColumn("fecha");
-        modelo.addColumn("horaEntrada");
-        modelo.addColumn("horaSalida");
-        modelo.addColumn("fk_tipoVehiculo");
-        modelo.addColumn("fk_usuario");
-        modelo.addColumn("fk_estado");
+         modelo.addColumn("Numero Placa");
+        modelo.addColumn("Hora entrada");
+        modelo.addColumn("Hora salida");
+       modelo.addColumn("Monto Total");
 
         tbDatos.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT * FROM registro";
-        } else {
-            sql = "SELECT * FROM registro WHERE id_registo='" + valor + "'";
+            sql = "SELECT númeroPlaca , horaEntrada , horaSalida, montoTotal FROM registro , factura WHERE factura.fk_registro= registro.id_registo";
+       
         }
-
-        String[] datos = new String[8];
+        String[] datos = new String[4];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -41,10 +35,8 @@ public class Reporte_2 extends javax.swing.JFrame {
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
-                datos[4] = rs.getString(5);
-                datos[5] = rs.getString(6);
-                datos[6] = rs.getString(7);
-                datos[7] = rs.getString(8);
+          
+            
                 modelo.addRow(datos);
             }
             tbDatos.setModel(modelo);
@@ -52,44 +44,40 @@ public class Reporte_2 extends javax.swing.JFrame {
             System.out.println(ex);
             // Logger.getLogger(ingresoproductos.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
+
     
     
         void mostrarFiltro(String valor) {
         DefaultTableModel modelo = new DefaultTableModel();
-       modelo.addColumn("id_registo");
-        modelo.addColumn("númeroPlaca");
-        modelo.addColumn("fecha");
-        modelo.addColumn("horaEntrada");
-        modelo.addColumn("horaSalida");
-        modelo.addColumn("fk_tipoVehiculo");
-        modelo.addColumn("fk_usuario");
-        modelo.addColumn("fk_estado");
+       modelo.addColumn("Numero Placa");
+        modelo.addColumn("Hora entrada");
+        modelo.addColumn("Hora salida");
+        modelo.addColumn("Monto total");
+      
 
         tbDatos.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "Select * From registro where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem() + " AND númeroPlaca='" + txtPlaca.getText() + "' AND fecha='" + txtFecha.getText() + "' " ;
+            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal From registro, factura where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem() + " AND fecha='" + txtFecha.getText() + "' and factura.fk_registro= registro.id_registo" ;
             //sql = "Select * From registro where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem() + " AND númeroPlaca='" + txtPlaca.getText() + "' AND fecha='" + txtFecha.getText() + "' " ;
-//SELECT * FROM `registro` WHERE fk_tipoVehiculo= 1 and númeroPlaca= 'DJz-123' and fecha= '15/2/2020'
+
+    
+        
+        
         }
 
-        String[] datos = new String[8];
+        String[] datos = new String[4];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
 
-              datos[0] = rs.getString(1);
+                datos[0] = rs.getString(1);
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
-                datos[4] = rs.getString(5);
-                datos[5] = rs.getString(6);
-                datos[6] = rs.getString(7);
-                datos[7] = rs.getString(8);
-
+                
                 modelo.addRow(datos);
             }
             tbDatos.setModel(modelo);
@@ -127,6 +115,8 @@ public class Reporte_2 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Tipo de vehículo");
+
+        txtPlaca.setEnabled(false);
 
         jLabel2.setText("Placa");
 
@@ -213,9 +203,9 @@ public class Reporte_2 extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addGap(30, 30, 30)
                                     .addComponent(cmbTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(41, 41, 41)
+                                    .addGap(47, 47, 47)
                                     .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(41, 41, 41)
+                                    .addGap(35, 35, 35)
                                     .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
