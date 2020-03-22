@@ -79,7 +79,7 @@ public class Reporte1 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,7 +134,7 @@ public class Reporte1 extends javax.swing.JFrame {
 
         jLabel7.setText("Tipo vehiculo:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 80, 20));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 150, 30));
+        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,7 +185,7 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JButton btnreporte;
     private javax.swing.JButton btnsalir2;
     private javax.swing.JButton btnsalir3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
