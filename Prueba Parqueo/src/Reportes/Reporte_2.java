@@ -1,32 +1,34 @@
 package Reportes;
 
-
 import Conexion.datosP;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class Reporte_2 extends javax.swing.JFrame {
 
     public Reporte_2() {
         initComponents();
-          setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     void mostrardatos(String valor) {
+
         DefaultTableModel modelo = new DefaultTableModel();
-         modelo.addColumn("Numero Placa");
+        modelo.addColumn("Numero Placa");
         modelo.addColumn("Hora entrada");
         modelo.addColumn("Hora salida");
-       modelo.addColumn("Monto Total");
+        modelo.addColumn("Monto Total");
 
         tbDatos.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT númeroPlaca , horaEntrada , horaSalida, montoTotal FROM registro , factura WHERE factura.fk_registro= registro.id_registo";
-       
+            sql = "SELECT númeroPlaca , horaEntrada , horaSalida, montoTotal "
+                    + "FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo";
+
         }
         String[] datos = new String[4];
         try {
@@ -38,8 +40,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
-          
-            
+
                 modelo.addRow(datos);
             }
             tbDatos.setModel(modelo);
@@ -49,25 +50,23 @@ public class Reporte_2 extends javax.swing.JFrame {
         }
     }
 
-    
-    
-        void mostrarFiltro(String valor) {
+    void mostrarFiltro(String valor) {
+
         DefaultTableModel modelo = new DefaultTableModel();
-       modelo.addColumn("Numero Placa");
+        modelo.addColumn("Numero Placa");
         modelo.addColumn("Hora entrada");
         modelo.addColumn("Hora salida");
         modelo.addColumn("Monto total");
-      
 
         tbDatos.setModel(modelo);
         String sql = "";
-        if (valor.equals("")) {
-            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal From registro, factura where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem() + " AND fecha='" + txtFecha.getText() + "' and factura.fk_registro= registro.id_registo" ;
-            //sql = "Select * From registro where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem() + " AND númeroPlaca='" + txtPlaca.getText() + "' AND fecha='" + txtFecha.getText() + "' " ;
 
-    
-        
-        
+        if (valor.equals("")) {
+
+            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal "
+                    + "From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
+                    + " AND fecha='" + txtFecha1.getText() + "'";
+
         }
 
         String[] datos = new String[4];
@@ -80,7 +79,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
-                
+
                 modelo.addRow(datos);
             }
             tbDatos.setModel(modelo);
@@ -89,52 +88,233 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         }
     }
-    
-    
+
+    void mostrarFiltro2Fechas(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Numero Placa");
+        modelo.addColumn("Hora entrada");
+        modelo.addColumn("Hora salida");
+        modelo.addColumn("Monto total");
+
+        tbDatos.setModel(modelo);
+        String sql = "";
+
+        if (valor.equals("")) {
+
+            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal "
+                    + "From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
+                    + " AND fecha between'" + txtFecha1.getText() + "' and '" + txtFecha2.getText() + "'  ";
+
+        }
+
+        String[] datos = new String[4];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                datos[3] = rs.getString(4);
+
+                modelo.addRow(datos);
+            }
+            tbDatos.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+    }
+
+    void mostrarMonto(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Suma total de montos de datos filtados");
+
+        tbmontoT.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo "
+                    + "WHERE fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
+                    + "  AND fecha='" + txtFecha1.getText() + "'";
+
+        }
+
+        String[] datos = new String[1];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+
+                modelo.addRow(datos);
+            }
+            tbmontoT.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+    }
+
+    void mostrarMonto2Fecha(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Suma total de montos de datos filtados");
+
+        tbmontoT.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo "
+                    + "WHERE fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
+                    + "  AND fecha between'" + txtFecha1.getText() + "' and '" + txtFecha2.getText() + "'";
+
+        }
+
+        String[] datos = new String[1];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+
+                modelo.addRow(datos);
+            }
+            tbmontoT.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+    }
+
+    void mostrarMontoTotal(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Suma total");
+
+        tbMontoR.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo";
+
+        }
+
+        String[] datos = new String[1];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+
+                modelo.addRow(datos);
+            }
+            tbMontoR.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+    }
+
+    void mostrarDatosPorPlaca(String valor) {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Numero Placa");
+        modelo.addColumn("Hora entrada");
+        modelo.addColumn("Hora salida");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Monto total");
+
+        tbDatos.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "Select númeroPlaca , horaEntrada , horaSalida, fecha, montoTotal "
+                    + "From registro a INNER JOIN factura b  on b.fk_registro = a.id_registo "
+                    + "where númeroPlaca ='" + txtPlaca.getText() + "'";
+
+        }
+
+        String[] datos = new String[5];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
+
+                modelo.addRow(datos);
+            }
+            tbDatos.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtPlaca = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        txtFecha1 = new javax.swing.JTextField();
         btnFiltrar = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         cmbTipoVehiculo = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbDatos = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tbMonto = new javax.swing.JTable();
+        tbmontoT = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtVerAll = new javax.swing.JLabel();
+        btnTotalR = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbMontoR = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        txtPlaca = new javax.swing.JTextField();
+        btnPlaca = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtFecha2 = new javax.swing.JTextField();
+        btnFitrar2Fechas = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+
+        jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("Tipo de vehículo");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
 
-        txtPlaca.setEnabled(false);
+        txtFecha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFecha1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 139, -1));
 
-        jLabel2.setText("Placa");
-
-        jLabel3.setText("Fecha");
-
-        btnFiltrar.setText("Filtrar");
+        btnFiltrar.setText("Filtrar por 1 fecha");
         btnFiltrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnFiltrarMouseClicked(evt);
             }
         });
-
-        jLabel5.setText("Monto total");
+        jPanel1.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
 
         cmbTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
+        jPanel1.add(cmbTipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 123, -1));
 
         tbDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -149,7 +329,9 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbDatos);
 
-        tbMonto.setModel(new javax.swing.table.DefaultTableModel(
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 610, 190));
+
+        tbmontoT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -160,113 +342,170 @@ public class Reporte_2 extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane3.setViewportView(tbMonto);
+        jScrollPane3.setViewportView(tbmontoT);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 250, 50));
 
         jLabel4.setText("1 Liviano");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
         jLabel6.setText("2 Pesado");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
 
         jLabel7.setText("3 Motos");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
-        txtVerAll.setText("Ver todos");
+        txtVerAll.setText("Ver todos los registros facturados");
         txtVerAll.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtVerAllMouseClicked(evt);
             }
         });
+        jPanel1.add(txtVerAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(142, 142, 142))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addComponent(btnFiltrar)
-                        .addGap(254, 254, 254)
-                        .addComponent(txtVerAll))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(44, 44, 44)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(cmbTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(47, 47, 47)
-                                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(35, 35, 35)
-                                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(48, 48, 48)
-                                    .addComponent(jLabel1)
-                                    .addGap(111, 111, 111)
-                                    .addComponent(jLabel2)
-                                    .addGap(141, 141, 141)
-                                    .addComponent(jLabel3))
-                                .addComponent(jLabel7)))))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(cmbTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFiltrar)
-                    .addComponent(txtVerAll))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
+        btnTotalR.setText("Monto total registrado");
+        btnTotalR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTotalRMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnTotalR, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 400, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
+        tbMontoR.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(tbMontoR);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 220, 50));
+
+        jLabel2.setText("Placa");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+        jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 120, 30));
+
+        btnPlaca.setText("Filtrar por placa");
+        btnPlaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlacaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+
+        jLabel8.setText("Fecha 2");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, -1, -1));
+
+        jLabel9.setText("Fecha 1");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, -1));
+
+        txtFecha2.setEnabled(false);
+        txtFecha2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFecha2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 139, -1));
+
+        btnFitrar2Fechas.setText("Filtrar por 2 fechas");
+        btnFitrar2Fechas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFitrar2FechasMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
+
+        jLabel10.setText("Monto de consulta");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFiltrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFiltrarMouseClicked
-
         mostrarFiltro("");
-        
-     
+        txtFecha2.setEnabled(false);
+        txtFecha2.setText("");
+        mostrarMonto("");
+
+        DefaultTableModel tb = (DefaultTableModel) tbMontoR.getModel();
+        int a = tbMontoR.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            tb.removeRow(tb.getRowCount() - 1);
+
+        }
+
     }//GEN-LAST:event_btnFiltrarMouseClicked
 
     private void txtVerAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVerAllMouseClicked
-       mostrardatos("");
-        
+        mostrardatos("");
+        mostrarMontoTotal("");
+        txtFecha1.setText("");
+        txtFecha2.setText("");
+
+        DefaultTableModel tb = (DefaultTableModel) tbmontoT.getModel();
+        int a = tbmontoT.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            tb.removeRow(tb.getRowCount() - 1);
+
+        }
+
     }//GEN-LAST:event_txtVerAllMouseClicked
+
+    private void btnTotalRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTotalRMouseClicked
+        mostrarMontoTotal("");
+    }//GEN-LAST:event_btnTotalRMouseClicked
+
+    private void btnPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlacaActionPerformed
+        mostrarDatosPorPlaca("");
+        txtPlaca.setText("");
+        txtFecha1.setText("");
+        txtFecha2.setText("");
+
+        DefaultTableModel tb = (DefaultTableModel) tbmontoT.getModel();
+        int a = tbmontoT.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            tb.removeRow(tb.getRowCount() - 1);
+
+        }
+
+        DefaultTableModel tb1 = (DefaultTableModel) tbMontoR.getModel();
+        int b = tbMontoR.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            tb1.removeRow(tb1.getRowCount() - 1);
+
+        }
+
+    }//GEN-LAST:event_btnPlacaActionPerformed
+
+    private void txtFecha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFecha1ActionPerformed
+
+    }//GEN-LAST:event_txtFecha1ActionPerformed
+
+    private void txtFecha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFecha2ActionPerformed
+
+    }//GEN-LAST:event_txtFecha2ActionPerformed
+
+    private void btnFitrar2FechasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFitrar2FechasMouseClicked
+
+        txtFecha2.setEnabled(true);
+        mostrarFiltro2Fechas("");
+        mostrarMonto2Fecha("");
+        DefaultTableModel tb = (DefaultTableModel) tbMontoR.getModel();
+        int a = tbMontoR.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            tb.removeRow(tb.getRowCount() - 1);
+
+        }
+
+
+    }//GEN-LAST:event_btnFitrar2FechasMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -302,20 +541,28 @@ public class Reporte_2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnFiltrar;
+    private javax.swing.JLabel btnFitrar2Fechas;
+    private javax.swing.JButton btnPlaca;
+    private javax.swing.JLabel btnTotalR;
     private javax.swing.JComboBox cmbTipoVehiculo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable tbDatos;
-    private javax.swing.JTable tbMonto;
-    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTable tbMontoR;
+    private javax.swing.JTable tbmontoT;
+    private javax.swing.JTextField txtFecha1;
+    private javax.swing.JTextField txtFecha2;
     private javax.swing.JTextField txtPlaca;
     private javax.swing.JLabel txtVerAll;
     // End of variables declaration//GEN-END:variables

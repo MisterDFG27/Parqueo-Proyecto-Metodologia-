@@ -134,7 +134,7 @@ public class Reporte1 extends javax.swing.JFrame {
 
         jLabel7.setText("Tipo vehiculo:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 80, 20));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 150, 30));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
