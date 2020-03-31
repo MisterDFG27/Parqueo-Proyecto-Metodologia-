@@ -287,16 +287,10 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnFiltrar = new javax.swing.JLabel();
-        cmbTipoVehiculo = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbDatos = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbmontoT = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         txtVerAll = new javax.swing.JLabel();
         btnTotalR = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -304,33 +298,29 @@ public class Reporte_2 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtPlaca = new javax.swing.JTextField();
         btnPlaca = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        btnFitrar2Fechas = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtFecha1 = new com.toedter.calendar.JDateChooser();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         txtFecha2 = new com.toedter.calendar.JDateChooser();
+        jLabel8 = new javax.swing.JLabel();
+        txtFecha1 = new com.toedter.calendar.JDateChooser();
+        jLabel9 = new javax.swing.JLabel();
+        cmbTipoVehiculo = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        btnFiltrar = new javax.swing.JLabel();
+        btnFitrar2Fechas = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Tipo de vehículo");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
-
-        btnFiltrar.setText("Filtrar por 1 fecha");
-        btnFiltrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFiltrarMouseClicked(evt);
-            }
-        });
-        jPanel1.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
-
-        cmbTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
-        jPanel1.add(cmbTipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 123, -1));
 
         tbDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -343,9 +333,10 @@ public class Reporte_2 extends javax.swing.JFrame {
 
             }
         ));
+        tbDatos.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tbDatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 610, 190));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 610, 310));
 
         tbmontoT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -360,16 +351,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbmontoT);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 250, 50));
-
-        jLabel4.setText("1 Liviano");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
-
-        jLabel6.setText("2 Pesado");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
-
-        jLabel7.setText("3 Motos");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 250, 50));
 
         txtVerAll.setText("Ver todos los registros facturados");
         txtVerAll.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -377,7 +359,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 txtVerAllMouseClicked(evt);
             }
         });
-        jPanel1.add(txtVerAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
+        jPanel1.add(txtVerAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, -1, -1));
 
         btnTotalR.setText("Monto total registrado");
         btnTotalR.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -385,7 +367,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 btnTotalRMouseClicked(evt);
             }
         });
-        jPanel1.add(btnTotalR, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 400, -1, -1));
+        jPanel1.add(btnTotalR, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, -1, -1));
 
         tbMontoR.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -400,11 +382,11 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbMontoR);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 220, 50));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 590, 220, 50));
 
         jLabel2.setText("Placa");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
-        jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 120, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
+        jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 120, 30));
 
         btnPlaca.setText("Filtrar por placa");
         btnPlaca.addActionListener(new java.awt.event.ActionListener() {
@@ -412,13 +394,51 @@ public class Reporte_2 extends javax.swing.JFrame {
                 btnPlacaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        jPanel1.add(btnPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
-        jLabel8.setText("Fecha 2");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, -1, -1));
+        jLabel10.setText("Monto de consulta");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, -1, -1));
 
-        jLabel9.setText("Fecha 1");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Consultas");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
+
+        txtFecha2.setEnabled(false);
+        jPanel2.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
+
+        jLabel8.setText("Fecha Final");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, -1, -1));
+        jPanel2.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+
+        jLabel9.setText("Fecha Inicial");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+
+        cmbTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
+        jPanel2.add(cmbTipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 123, -1));
+
+        jLabel1.setText("Tipo de vehículo");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+
+        jLabel4.setText("1 Liviano");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+
+        jLabel6.setText("2 Pesado");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
+
+        jLabel7.setText("3 Motos");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+
+        btnFiltrar.setText("Filtrar por 1 fecha");
+        btnFiltrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFiltrarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
 
         btnFitrar2Fechas.setText("Filtrar por 2 fechas");
         btnFitrar2Fechas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -426,16 +446,16 @@ public class Reporte_2 extends javax.swing.JFrame {
                 btnFitrar2FechasMouseClicked(evt);
             }
         });
-        jPanel1.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
+        jPanel2.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, -1, -1));
 
-        jLabel10.setText("Monto de consulta");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, -1, -1));
-        jPanel1.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 290, 690));
 
-        txtFecha2.setEnabled(false);
-        jPanel1.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, -1, -1));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("Reporte específico ");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 610));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 750));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -564,14 +584,17 @@ public class Reporte_2 extends javax.swing.JFrame {
     private javax.swing.JComboBox cmbTipoVehiculo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
