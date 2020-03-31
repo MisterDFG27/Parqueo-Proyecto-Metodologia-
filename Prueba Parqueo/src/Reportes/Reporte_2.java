@@ -5,14 +5,30 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class Reporte_2 extends javax.swing.JFrame {
 
+    String date;
+    String date2;
+
     public Reporte_2() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+
+    public void processCalendar() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        date = dateFormat.format(txtFecha1.getDate());
+
+    }
+
+    public void processCalendar2() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        date2 = dateFormat.format(txtFecha2.getDate());
+
     }
 
     void mostrardatos(String valor) {
@@ -59,13 +75,14 @@ public class Reporte_2 extends javax.swing.JFrame {
         modelo.addColumn("Monto total");
 
         tbDatos.setModel(modelo);
+        processCalendar();
         String sql = "";
 
         if (valor.equals("")) {
 
             sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal "
                     + "From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
-                    + " AND fecha='" + txtFecha1.getText() + "'";
+                    + " AND fecha='" + date + "'";
 
         }
 
@@ -98,13 +115,15 @@ public class Reporte_2 extends javax.swing.JFrame {
         modelo.addColumn("Monto total");
 
         tbDatos.setModel(modelo);
+        processCalendar();
+        processCalendar2();
         String sql = "";
 
         if (valor.equals("")) {
 
             sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal "
                     + "From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
-                    + " AND fecha between'" + txtFecha1.getText() + "' and '" + txtFecha2.getText() + "'  ";
+                    + " AND fecha between'" + date + "' and '" + date2 + "'  ";
 
         }
 
@@ -134,11 +153,12 @@ public class Reporte_2 extends javax.swing.JFrame {
         modelo.addColumn("Suma total de montos de datos filtados");
 
         tbmontoT.setModel(modelo);
+        processCalendar();
         String sql = "";
         if (valor.equals("")) {
             sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo "
                     + "WHERE fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
-                    + "  AND fecha='" + txtFecha1.getText() + "'";
+                    + "  AND fecha='" + date + "'";
 
         }
 
@@ -165,11 +185,13 @@ public class Reporte_2 extends javax.swing.JFrame {
         modelo.addColumn("Suma total de montos de datos filtados");
 
         tbmontoT.setModel(modelo);
+        processCalendar();
+        processCalendar2();
         String sql = "";
         if (valor.equals("")) {
             sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo "
                     + "WHERE fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
-                    + "  AND fecha between'" + txtFecha1.getText() + "' and '" + txtFecha2.getText() + "'";
+                    + "  AND fecha between'" + date + "' and '" + date2 + "'";
 
         }
 
@@ -196,6 +218,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         modelo.addColumn("Suma total");
 
         tbMontoR.setModel(modelo);
+
         String sql = "";
         if (valor.equals("")) {
             sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo";
@@ -265,7 +288,6 @@ public class Reporte_2 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtFecha1 = new javax.swing.JTextField();
         btnFiltrar = new javax.swing.JLabel();
         cmbTipoVehiculo = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -284,9 +306,10 @@ public class Reporte_2 extends javax.swing.JFrame {
         btnPlaca = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtFecha2 = new javax.swing.JTextField();
         btnFitrar2Fechas = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        txtFecha1 = new com.toedter.calendar.JDateChooser();
+        txtFecha2 = new com.toedter.calendar.JDateChooser();
 
         jLabel3.setText("jLabel3");
 
@@ -297,13 +320,6 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         jLabel1.setText("Tipo de vehículo");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
-
-        txtFecha1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFecha1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 139, -1));
 
         btnFiltrar.setText("Filtrar por 1 fecha");
         btnFiltrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -404,14 +420,6 @@ public class Reporte_2 extends javax.swing.JFrame {
         jLabel9.setText("Fecha 1");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, -1));
 
-        txtFecha2.setEnabled(false);
-        txtFecha2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFecha2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 139, -1));
-
         btnFitrar2Fechas.setText("Filtrar por 2 fechas");
         btnFitrar2Fechas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -422,6 +430,10 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         jLabel10.setText("Monto de consulta");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, -1, -1));
+        jPanel1.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, -1));
+
+        txtFecha2.setEnabled(false);
+        jPanel1.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 610));
 
@@ -429,26 +441,28 @@ public class Reporte_2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFiltrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFiltrarMouseClicked
-        mostrarFiltro("");
-        txtFecha2.setEnabled(false);
-        txtFecha2.setText("");
-        mostrarMonto("");
 
-        DefaultTableModel tb = (DefaultTableModel) tbMontoR.getModel();
-        int a = tbMontoR.getRowCount() - 1;
-        for (int i = a; i >= 0; i--) {
-            tb.removeRow(tb.getRowCount() - 1);
+        try {
+            txtFecha2.setEnabled(false);
+            txtFecha2.setDate(null);
+            mostrarFiltro("");
+            mostrarMonto("");
+
+            DefaultTableModel tb = (DefaultTableModel) tbMontoR.getModel();
+            int a = tbMontoR.getRowCount() - 1;
+            for (int i = a; i >= 0; i--) {
+                tb.removeRow(tb.getRowCount() - 1);
+            }
+        } catch (Exception i) {
 
         }
-
     }//GEN-LAST:event_btnFiltrarMouseClicked
 
     private void txtVerAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVerAllMouseClicked
         mostrardatos("");
         mostrarMontoTotal("");
-        txtFecha1.setText("");
-        txtFecha2.setText("");
-
+        txtFecha1.setDate(null);
+        txtFecha2.setDate(null);
         DefaultTableModel tb = (DefaultTableModel) tbmontoT.getModel();
         int a = tbmontoT.getRowCount() - 1;
         for (int i = a; i >= 0; i--) {
@@ -465,8 +479,8 @@ public class Reporte_2 extends javax.swing.JFrame {
     private void btnPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlacaActionPerformed
         mostrarDatosPorPlaca("");
         txtPlaca.setText("");
-        txtFecha1.setText("");
-        txtFecha2.setText("");
+        txtFecha1.setDate(null);
+        txtFecha2.setDate(null);
 
         DefaultTableModel tb = (DefaultTableModel) tbmontoT.getModel();
         int a = tbmontoT.getRowCount() - 1;
@@ -477,33 +491,36 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         DefaultTableModel tb1 = (DefaultTableModel) tbMontoR.getModel();
         int b = tbMontoR.getRowCount() - 1;
-        for (int i = a; i >= 0; i--) {
+        for (int i = b; i >= 0; i--) {
             tb1.removeRow(tb1.getRowCount() - 1);
 
         }
 
     }//GEN-LAST:event_btnPlacaActionPerformed
 
-    private void txtFecha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFecha1ActionPerformed
-
-    }//GEN-LAST:event_txtFecha1ActionPerformed
-
-    private void txtFecha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFecha2ActionPerformed
-
-    }//GEN-LAST:event_txtFecha2ActionPerformed
-
     private void btnFitrar2FechasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFitrar2FechasMouseClicked
 
-        txtFecha2.setEnabled(true);
-        mostrarFiltro2Fechas("");
-        mostrarMonto2Fecha("");
-        DefaultTableModel tb = (DefaultTableModel) tbMontoR.getModel();
-        int a = tbMontoR.getRowCount() - 1;
-        for (int i = a; i >= 0; i--) {
-            tb.removeRow(tb.getRowCount() - 1);
+        try {
+            DefaultTableModel tb1 = (DefaultTableModel) tbmontoT.getModel();
+            int b = tbmontoT.getRowCount() - 1;
+            for (int i = b; i >= 0; i--) {
+                tb1.removeRow(tb1.getRowCount() - 1);
+
+            }
+
+            txtFecha2.setEnabled(true);
+            mostrarFiltro2Fechas("");
+            mostrarMonto2Fecha("");
+
+            DefaultTableModel tb = (DefaultTableModel) tbMontoR.getModel();
+            int a = tbMontoR.getRowCount() - 1;
+            for (int i = a; i >= 0; i--) {
+                tb.removeRow(tb.getRowCount() - 1);
+            }
+
+        } catch (Exception i) {
 
         }
-
 
     }//GEN-LAST:event_btnFitrar2FechasMouseClicked
 
@@ -561,8 +578,8 @@ public class Reporte_2 extends javax.swing.JFrame {
     private javax.swing.JTable tbDatos;
     private javax.swing.JTable tbMontoR;
     private javax.swing.JTable tbmontoT;
-    private javax.swing.JTextField txtFecha1;
-    private javax.swing.JTextField txtFecha2;
+    private com.toedter.calendar.JDateChooser txtFecha1;
+    private com.toedter.calendar.JDateChooser txtFecha2;
     private javax.swing.JTextField txtPlaca;
     private javax.swing.JLabel txtVerAll;
     // End of variables declaration//GEN-END:variables
