@@ -549,7 +549,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Reportes/Parqueo2.jpg"/>
+          <Image iconType="2" name="C:\Users\monge\Documents\NetBeansProjects\Parqueo-Proyecto-Metodologia-\Prueba Parqueo\src\img\Parqueo2.jpg"/>
         </Property>
       </Properties>
       <Constraints>

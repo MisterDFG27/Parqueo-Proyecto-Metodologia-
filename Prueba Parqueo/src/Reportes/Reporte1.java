@@ -489,7 +489,7 @@ public class Reporte1 extends javax.swing.JFrame {
         });
         getContentPane().add(btnsalir4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, 90, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/Parqueo2.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\monge\\Documents\\NetBeansProjects\\Parqueo-Proyecto-Metodologia-\\Prueba Parqueo\\src\\img\\Parqueo2.jpg")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
 
         pack();
