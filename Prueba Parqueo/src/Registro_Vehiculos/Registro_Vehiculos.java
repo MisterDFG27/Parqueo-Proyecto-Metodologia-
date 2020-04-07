@@ -1,7 +1,7 @@
 package Registro_Vehiculos;
 
 
-import Menu.Menu;
+
 
 public class Registro_Vehiculos extends javax.swing.JFrame {
 
@@ -158,8 +158,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
        Registro_Vehiculos re= new Registro_Vehiculos();
        re.setVisible(false);
        
-       Menu me= new Menu();
-       me.setVisible(true);
+    
     }//GEN-LAST:event_txtmenuActionPerformed
 
     /**

@@ -1,7 +1,7 @@
 package Login;
 
 
-import Menu.Menu;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -29,15 +29,11 @@ public class Login extends javax.swing.JFrame {
                 cap = rs.getString("fk_tipoUsuario");
             }
             if (cap.equals("12")) {
-                Menu m = new Menu();
-                m.setVisible(true);
-                dispose();      
+               
 
             }
             if (cap.equals("23")) {
-                Menu m = new Menu();
-                m.setVisible(true);
-                dispose();
+              
             }
             if ((!cap.equals("12")) && (!cap.equals("23"))) {
                 JOptionPane.showMessageDialog(this, "No existe sus datos");
