@@ -417,13 +417,13 @@ public class Reporte_2 extends javax.swing.JFrame {
         cmbTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
         jPanel1.add(cmbTipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 50, -1));
 
-        jLabel4.setText("1 Liviano");
+        jLabel4.setText("Liviano");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 190, -1, -1));
 
-        jLabel6.setText("2 Pesado");
+        jLabel6.setText("Pesado");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, -1, -1));
 
-        jLabel7.setText("3 Motos");
+        jLabel7.setText("Motos");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 230, -1, -1));
 
         jLabel9.setText("Fecha Inicial");
