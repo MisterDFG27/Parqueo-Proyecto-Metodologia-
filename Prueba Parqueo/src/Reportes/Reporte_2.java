@@ -382,7 +382,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbMontoR);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 590, 220, 50));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 220, 50));
 
         jLabel2.setText("Placa");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
