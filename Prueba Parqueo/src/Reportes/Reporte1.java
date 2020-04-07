@@ -285,7 +285,8 @@ public class Reporte1 extends javax.swing.JFrame {
         tbMontoR = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         btnsalir4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        txtfecha = new com.toedter.calendar.JDateChooser();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -482,7 +483,15 @@ public class Reporte1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnsalir4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, 90, 30));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtfecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtfecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtfecha.setMaxSelectableDate(new java.util.Date(253370790075000L));
+        jPanel2.add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 180, 40));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -559,7 +568,6 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JButton btnsalir3;
     private javax.swing.JButton btnsalir4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -567,6 +575,7 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -584,6 +593,7 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JTable tbmont1;
     private javax.swing.JTable tbmont2;
     private javax.swing.JTable tbmont3;
+    private com.toedter.calendar.JDateChooser txtfecha;
     // End of variables declaration//GEN-END:variables
  datosP cc = new datosP();
     Connection cn = cc.conexion();
