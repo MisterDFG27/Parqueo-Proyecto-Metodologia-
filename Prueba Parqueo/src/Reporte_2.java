@@ -120,6 +120,12 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         jLabel2.setText("Placa");
 
+        txtFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Fecha");
 
         btnFiltrar.setText("Filtrar");
@@ -264,6 +270,10 @@ public class Reporte_2 extends javax.swing.JFrame {
        mostrardatos("");
         
     }//GEN-LAST:event_txtVerAllMouseClicked
+
+    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

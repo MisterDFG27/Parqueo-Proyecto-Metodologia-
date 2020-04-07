@@ -281,7 +281,6 @@ public class Reporte1 extends javax.swing.JFrame {
         tbmont1 = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
         tbcantliv = new javax.swing.JTable();
-        txtfecha = new com.toedter.calendar.JDateChooser();
         jScrollPane7 = new javax.swing.JScrollPane();
         tbMontoR = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
@@ -454,11 +453,6 @@ public class Reporte1 extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 90, 60));
 
-        txtfecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtfecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtfecha.setMaxSelectableDate(new java.util.Date(253370790075000L));
-        getContentPane().add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 180, 40));
-
         tbMontoR.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbMontoR.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tbMontoR.setModel(new javax.swing.table.DefaultTableModel(
@@ -488,8 +482,6 @@ public class Reporte1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnsalir4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, 90, 30));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\monge\\Documents\\NetBeansProjects\\Parqueo-Proyecto-Metodologia-\\Prueba Parqueo\\src\\img\\Parqueo2.jpg")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
 
         pack();
@@ -592,7 +584,6 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JTable tbmont1;
     private javax.swing.JTable tbmont2;
     private javax.swing.JTable tbmont3;
-    private com.toedter.calendar.JDateChooser txtfecha;
     // End of variables declaration//GEN-END:variables
  datosP cc = new datosP();
     Connection cn = cc.conexion();
