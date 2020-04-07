@@ -311,8 +311,8 @@ public class Reporte_2 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnFiltrar = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         btnFitrar2Fechas = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -440,20 +440,20 @@ public class Reporte_2 extends javax.swing.JFrame {
         });
         jPanel2.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 290, 690));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Reporte específico ");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
-
         btnFitrar2Fechas.setText("Filtrar por 2 fechas");
         btnFitrar2Fechas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnFitrar2FechasMouseClicked(evt);
             }
         });
-        jPanel1.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 690, -1, -1));
+        jPanel2.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 290, 690));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("Reporte específico ");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 750));
 
