@@ -423,7 +423,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         jLabel6.setText("Pesado");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, -1, -1));
 
-        jLabel7.setText("Motos");
+        jLabel7.setText("Moto");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 230, -1, -1));
 
         jLabel9.setText("Fecha Inicial");
