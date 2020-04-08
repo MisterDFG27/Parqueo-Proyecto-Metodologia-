@@ -20,13 +20,14 @@ public class Reporte_2 extends javax.swing.JFrame {
     }
 
     public void processCalendar() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                                          //yyyy-MM-dd
         date = dateFormat.format(txtFecha1.getDate());
 
     }
 
     public void processCalendar2() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         date2 = dateFormat.format(txtFecha2.getDate());
 
     }
@@ -533,12 +534,7 @@ public class Reporte_2 extends javax.swing.JFrame {
     private void btnFitrar2FechasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFitrar2FechasMouseClicked
 
         try {
-            DefaultTableModel tb1 = (DefaultTableModel) tbmontoT.getModel();
-            int b = tbmontoT.getRowCount() - 1;
-            for (int i = b; i >= 0; i--) {
-                tb1.removeRow(tb1.getRowCount() - 1);
-
-            }
+      
 
             txtFecha2.setEnabled(true);
             mostrarFiltro2Fechas("");
