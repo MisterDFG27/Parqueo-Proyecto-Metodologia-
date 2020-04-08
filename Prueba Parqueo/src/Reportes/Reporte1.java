@@ -1,7 +1,6 @@
 package Reportes;
 
 import Conexion.datosP;
-import Registro_Vehiculos.factura;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -510,9 +509,7 @@ public class Reporte1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnlimpiarActionPerformed
 
     private void btnsalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalir3ActionPerformed
-        factura f = new factura();
-        f.setVisible(true);
-        dispose();
+     
     }//GEN-LAST:event_btnsalir3ActionPerformed
 
     private void btnsalir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalir4ActionPerformed

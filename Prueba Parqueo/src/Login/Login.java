@@ -1,8 +1,7 @@
 package Login;
 
 import Menu.Menu_Principal;
-import Menu.MenuAdministrador;
-import Menu.MenuUsuario;
+
 import static java.awt.SystemColor.menu;
 import java.sql.Connection;
 import java.sql.DriverManager;
