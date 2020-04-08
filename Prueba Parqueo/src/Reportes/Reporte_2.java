@@ -352,7 +352,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbmontoT);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 170, 40));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 170, 60));
 
         txtVerAll.setText("Ver todos los registros facturados");
         txtVerAll.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -383,7 +383,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbMontoR);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 170, 40));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 170, 50));
 
         jLabel2.setText("Placa");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
@@ -399,7 +399,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         jPanel1.add(btnPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
 
         jLabel10.setText("Monto de consulta");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel11.setText("Reporte específico ");

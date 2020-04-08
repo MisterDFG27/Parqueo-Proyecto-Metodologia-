@@ -1,5 +1,6 @@
 package Menu;
 
+import Registro_Vehiculos.facturaSalida;
 import Reportes.Reporte1;
 import Reportes.Reporte_2;
 
@@ -173,7 +174,8 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
     }//GEN-LAST:event_VehiculoMouseClicked
 
     private void FacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaMouseClicked
-
+         facturaSalida m = new facturaSalida();
+        m.setVisible(true);
     }//GEN-LAST:event_FacturaMouseClicked
 
     private void Reporte1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reporte1MouseClicked
