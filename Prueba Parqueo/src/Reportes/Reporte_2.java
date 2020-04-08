@@ -312,6 +312,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         txtFecha2 = new com.toedter.calendar.JDateChooser();
         btnFiltrar = new javax.swing.JLabel();
         btnFitrar2Fechas = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -450,6 +451,14 @@ public class Reporte_2 extends javax.swing.JFrame {
         });
         jPanel1.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 460, -1, 20));
 
+        btnMenu.setText("Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 540, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -548,6 +557,12 @@ public class Reporte_2 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnFitrar2FechasMouseClicked
 
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        Menu.Menu_Pricnipal m = new Menu.Menu_Pricnipal();
+        m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnMenuActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -583,6 +598,7 @@ public class Reporte_2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnFiltrar;
     private javax.swing.JLabel btnFitrar2Fechas;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnPlaca;
     private javax.swing.JLabel btnTotalR;
     private javax.swing.JComboBox cmbTipoVehiculo;

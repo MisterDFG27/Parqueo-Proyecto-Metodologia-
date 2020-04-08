@@ -1,7 +1,9 @@
 package Login;
 
-
-
+import Menu.Menu_Pricnipal;
+import Menu.MenuAdministrador;
+import Menu.MenuUsuario;
+import static java.awt.SystemColor.menu;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,14 +13,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-
 public class Login extends javax.swing.JFrame {
 
-   
     public Login() {
         initComponents();
-         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
+
     void acceder(String usuario, String clave) {
         String cap = "";
         String sql = "SELECT * FROM usuario WHERE nombreUsuario='" + usuario + "' && contraseña='" + clave + "'";
@@ -28,14 +29,18 @@ public class Login extends javax.swing.JFrame {
             while (rs.next()) {
                 cap = rs.getString("fk_tipoUsuario");
             }
-            if (cap.equals("12")) {
-               
+            if (cap.equals("1")) {
+                Menu_Pricnipal m = new Menu_Pricnipal();
+                m.setVisible(true);
+                dispose();
 
             }
-            if (cap.equals("23")) {
-              
+            if (cap.equals("2")) {
+                Menu_Pricnipal m = new Menu_Pricnipal();
+                m.setVisible(true);
+                dispose();
             }
-            if ((!cap.equals("12")) && (!cap.equals("23"))) {
+            if ((!cap.equals("1")) && (!cap.equals("2"))) {
                 JOptionPane.showMessageDialog(this, "No existe sus datos");
             }
         } catch (SQLException ex) {
@@ -43,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         }
 
     }
-  
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -157,7 +162,7 @@ public class Login extends javax.swing.JFrame {
         String cla = new String(PwClave.getPassword());
         acceder(usu, cla);
     }//GEN-LAST:event_btnIngresarActionPerformed
-public class conectar {
+    public class conectar {
 
         Connection conect = null;
 
@@ -175,6 +180,7 @@ public class conectar {
 
         }
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

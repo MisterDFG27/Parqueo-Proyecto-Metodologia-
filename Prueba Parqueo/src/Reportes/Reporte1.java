@@ -287,6 +287,7 @@ public class Reporte1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JButton();
         btnreporte = new javax.swing.JButton();
+        btnmenu = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -481,6 +482,14 @@ public class Reporte1 extends javax.swing.JFrame {
         });
         jPanel3.add(btnreporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 100, 30));
 
+        btnmenu.setText("Menu");
+        btnmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, -1, 30));
+
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
 
         pack();
@@ -515,6 +524,12 @@ public class Reporte1 extends javax.swing.JFrame {
         r.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnreporteActionPerformed
+
+    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+        Menu.Menu_Pricnipal m = new Menu.Menu_Pricnipal();
+        m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnmenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -554,6 +569,7 @@ public class Reporte1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btnlimpiar;
+    private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnreporte;
     private javax.swing.JButton btnsalir3;
     private javax.swing.JButton btnsalir4;

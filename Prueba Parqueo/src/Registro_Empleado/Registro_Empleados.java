@@ -55,6 +55,11 @@ public class Registro_Empleados extends javax.swing.JFrame {
         });
 
         btnmenu.setText("Menu");
+        btnmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre:");
 
@@ -227,6 +232,12 @@ public class Registro_Empleados extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnguardarActionPerformed
+
+    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+        Menu.Menu_Pricnipal m = new Menu.Menu_Pricnipal();
+        m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnmenuActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

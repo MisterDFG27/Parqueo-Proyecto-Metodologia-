@@ -4,16 +4,12 @@ import Conexion.datosP;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-
-
 public class Registro_Vehiculos extends javax.swing.JFrame {
-
 
     public Registro_Vehiculos() {
         initComponents();
         setLocationRelativeTo(null);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -119,15 +115,15 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmenuActionPerformed
-  
-    
+        Menu.Menu_Pricnipal m = new Menu.Menu_Pricnipal();
+        m.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_txtmenuActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
 
-        
-        
-                try {
+        try {
             datosP cc = new datosP();
             Connection cn = cc.conexion();
 
@@ -139,8 +135,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
             pst.setString(4, (String) cmbTipoV.getSelectedItem());
             pst.setString(5, txtIdUsuario.getText());
             pst.setString(6, txtEstado.getText());
-      
-        
 
             pst.executeUpdate();
 
@@ -151,13 +145,10 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         txtPlaca.setText("");
         txtFechaI.setText("");
         txtHoraEntrada.setText("");
-     
-     
-        
-        
+
+
     }//GEN-LAST:event_btnguardarActionPerformed
 
-  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
