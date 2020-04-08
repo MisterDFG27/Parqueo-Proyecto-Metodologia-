@@ -218,7 +218,7 @@ public class Reporte1 extends javax.swing.JFrame {
         tbMontoR.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo";
+            sql = "SELECT sum(montoTotal) FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fecha= '"+date+"'";
 
         }
 
