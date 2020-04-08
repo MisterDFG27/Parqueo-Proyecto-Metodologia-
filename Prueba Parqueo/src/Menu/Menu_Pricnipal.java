@@ -17,11 +17,11 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Empleado = new javax.swing.JMenu();
+        EmpleadoR = new javax.swing.JMenu();
         Vehiculo = new javax.swing.JMenu();
         Factura = new javax.swing.JMenu();
-        Reporte1 = new javax.swing.JMenu();
-        Reporte2 = new javax.swing.JMenu();
+        Reporte1Menu = new javax.swing.JMenu();
+        Reporte2Menu = new javax.swing.JMenu();
         CerrarSesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,18 +41,18 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
 
         jMenuBar1.setBackground(new java.awt.Color(0, 204, 204));
 
-        Empleado.setText("Registrar Empleado");
-        Empleado.addMouseListener(new java.awt.event.MouseAdapter() {
+        EmpleadoR.setText("Registrar Empleado");
+        EmpleadoR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                EmpleadoMouseClicked(evt);
+                EmpleadoRMouseClicked(evt);
             }
         });
-        Empleado.addActionListener(new java.awt.event.ActionListener() {
+        EmpleadoR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmpleadoActionPerformed(evt);
+                EmpleadoRActionPerformed(evt);
             }
         });
-        jMenuBar1.add(Empleado);
+        jMenuBar1.add(EmpleadoR);
 
         Vehiculo.setText("Registrar Vehículo");
         Vehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -80,31 +80,31 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
         });
         jMenuBar1.add(Factura);
 
-        Reporte1.setText("Reporte 1");
-        Reporte1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Reporte1Menu.setText("Reporte 1");
+        Reporte1Menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Reporte1MouseClicked(evt);
+                Reporte1MenuMouseClicked(evt);
             }
         });
-        Reporte1.addActionListener(new java.awt.event.ActionListener() {
+        Reporte1Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reporte1ActionPerformed(evt);
+                Reporte1MenuActionPerformed(evt);
             }
         });
-        jMenuBar1.add(Reporte1);
+        jMenuBar1.add(Reporte1Menu);
 
-        Reporte2.setText("Reporte 2");
-        Reporte2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Reporte2Menu.setText("Reporte 2");
+        Reporte2Menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Reporte2MouseClicked(evt);
+                Reporte2MenuMouseClicked(evt);
             }
         });
-        Reporte2.addActionListener(new java.awt.event.ActionListener() {
+        Reporte2Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reporte2ActionPerformed(evt);
+                Reporte2MenuActionPerformed(evt);
             }
         });
-        jMenuBar1.add(Reporte2);
+        jMenuBar1.add(Reporte2Menu);
 
         CerrarSesion.setText("Cerrar Sesión");
         CerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,10 +135,10 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadoActionPerformed
+    private void EmpleadoRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadoRActionPerformed
 
 
-    }//GEN-LAST:event_EmpleadoActionPerformed
+    }//GEN-LAST:event_EmpleadoRActionPerformed
 
     private void VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VehiculoActionPerformed
 
@@ -150,23 +150,24 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_FacturaActionPerformed
 
-    private void Reporte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reporte1ActionPerformed
+    private void Reporte1MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reporte1MenuActionPerformed
 
-    }//GEN-LAST:event_Reporte1ActionPerformed
+    }//GEN-LAST:event_Reporte1MenuActionPerformed
 
-    private void Reporte2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reporte2ActionPerformed
+    private void Reporte2MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reporte2MenuActionPerformed
 
 
-    }//GEN-LAST:event_Reporte2ActionPerformed
+    }//GEN-LAST:event_Reporte2MenuActionPerformed
 
     private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
 
     }//GEN-LAST:event_CerrarSesionActionPerformed
 
-    private void EmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadoMouseClicked
+    private void EmpleadoRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadoRMouseClicked
         Registro_Empleado.Registro_Empleados m = new Registro_Empleado.Registro_Empleados();
         m.setVisible(true);
-    }//GEN-LAST:event_EmpleadoMouseClicked
+        
+    }//GEN-LAST:event_EmpleadoRMouseClicked
 
     private void VehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VehiculoMouseClicked
         Registro_Vehiculos.Registro_Vehiculos m = new Registro_Vehiculos.Registro_Vehiculos();
@@ -178,16 +179,17 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
         m.setVisible(true);
     }//GEN-LAST:event_FacturaMouseClicked
 
-    private void Reporte1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reporte1MouseClicked
+    private void Reporte1MenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reporte1MenuMouseClicked
 
         Reporte1 m = new Reporte1();
         m.setVisible(true);
-    }//GEN-LAST:event_Reporte1MouseClicked
+    }//GEN-LAST:event_Reporte1MenuMouseClicked
 
-    private void Reporte2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reporte2MouseClicked
+    private void Reporte2MenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reporte2MenuMouseClicked
         Reporte_2 m = new Reporte_2();
         m.setVisible(true);
-    }//GEN-LAST:event_Reporte2MouseClicked
+         
+    }//GEN-LAST:event_Reporte2MenuMouseClicked
 
     private void CerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarSesionMouseClicked
         Login.Login m = new Login.Login();
@@ -230,10 +232,10 @@ public class Menu_Pricnipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu CerrarSesion;
-    private javax.swing.JMenu Empleado;
+    public javax.swing.JMenu EmpleadoR;
     private javax.swing.JMenu Factura;
-    private javax.swing.JMenu Reporte1;
-    private javax.swing.JMenu Reporte2;
+    public javax.swing.JMenu Reporte1Menu;
+    public javax.swing.JMenu Reporte2Menu;
     private javax.swing.JMenu Vehiculo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;

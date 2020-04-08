@@ -224,8 +224,7 @@ public class facturaSalida extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        Menu.Menu_Pricnipal m = new Menu.Menu_Pricnipal();
-        m.setVisible(true);
+    
         dispose();
 
 

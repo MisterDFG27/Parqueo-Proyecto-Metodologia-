@@ -39,6 +39,11 @@ public class Login extends javax.swing.JFrame {
                 Menu_Pricnipal m = new Menu_Pricnipal();
                 m.setVisible(true);
                 dispose();
+
+                m.EmpleadoR.setVisible(false);
+                m.Reporte1Menu.setVisible(false);
+                m.Reporte2Menu.setVisible(false);
+
             }
             if ((!cap.equals("1")) && (!cap.equals("2"))) {
                 JOptionPane.showMessageDialog(this, "No existe sus datos");

@@ -115,8 +115,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmenuActionPerformed
-        Menu.Menu_Pricnipal m = new Menu.Menu_Pricnipal();
-        m.setVisible(true);
+     
         dispose();
 
     }//GEN-LAST:event_txtmenuActionPerformed

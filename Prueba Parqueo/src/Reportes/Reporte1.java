@@ -526,8 +526,7 @@ public class Reporte1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnreporteActionPerformed
 
     private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
-        Menu.Menu_Pricnipal m = new Menu.Menu_Pricnipal();
-        m.setVisible(true);
+       
         dispose();
     }//GEN-LAST:event_btnmenuActionPerformed
 
