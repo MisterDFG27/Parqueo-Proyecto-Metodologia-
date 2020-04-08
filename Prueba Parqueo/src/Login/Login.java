@@ -1,6 +1,6 @@
 package Login;
 
-import Menu.Menu_Pricnipal;
+import Menu.Menu_Principal;
 import Menu.MenuAdministrador;
 import Menu.MenuUsuario;
 import static java.awt.SystemColor.menu;
@@ -30,19 +30,31 @@ public class Login extends javax.swing.JFrame {
                 cap = rs.getString("fk_tipoUsuario");
             }
             if (cap.equals("1")) {
-                Menu_Pricnipal m = new Menu_Pricnipal();
+                Menu_Principal m = new Menu_Principal();
                 m.setVisible(true);
                 dispose();
+                
+                // mostrar datos en las tablas del menu 
+                m.mostrardatosVL("");
+                m.mostrardatosVP("");
+                m.mostrardatosM("");
+                m.mostrardatosTotalVehiculosDia("");
 
             }
             if (cap.equals("2")) {
-                Menu_Pricnipal m = new Menu_Pricnipal();
+                Menu_Principal m = new Menu_Principal();
                 m.setVisible(true);
                 dispose();
 
                 m.EmpleadoR.setVisible(false);
                 m.Reporte1Menu.setVisible(false);
                 m.Reporte2Menu.setVisible(false);
+                
+            // mostrar datos en las tablas del menu        
+                m.mostrardatosVL("");
+                m.mostrardatosVP("");
+                m.mostrardatosM("");
+                m.mostrardatosTotalVehiculosDia("");
 
             }
             if ((!cap.equals("1")) && (!cap.equals("2"))) {
@@ -166,6 +178,10 @@ public class Login extends javax.swing.JFrame {
         String usu = txtUsuario.getText();
         String cla = new String(PwClave.getPassword());
         acceder(usu, cla);
+
+        Menu_Principal m = new Menu_Principal();
+
+
     }//GEN-LAST:event_btnIngresarActionPerformed
     public class conectar {
 

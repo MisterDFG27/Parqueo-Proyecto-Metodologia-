@@ -1,6 +1,7 @@
 package Registro_Vehiculos;
 
 import Conexion.datosP;
+import Menu.Menu_Principal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -115,7 +116,8 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmenuActionPerformed
-     
+
+
         dispose();
 
     }//GEN-LAST:event_txtmenuActionPerformed
