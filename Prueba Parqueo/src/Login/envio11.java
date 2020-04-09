@@ -91,8 +91,8 @@ public class envio11 extends javax.swing.JFrame {
 
             Session session = Session.getDefaultInstance(props);
 
-            String correoRemitente = "sandra87810460@gmail.com";
-            String passwordRemitente = "87810460";
+            String correoRemitente = "parqueoguapiles@gmail.com";
+            String passwordRemitente = "guapiles123";
             String correoReceptor = txtCorreo.getText();
             String asunto = "ULATINA";
             String mensaje = "Usted esta moroso";
