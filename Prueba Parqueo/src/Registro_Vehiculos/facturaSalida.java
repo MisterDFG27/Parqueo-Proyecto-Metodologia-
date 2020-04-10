@@ -25,26 +25,21 @@ public class facturaSalida extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-    void Datos(String valor) {
+    public void mostrarVehiculoFacturar(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Numero Placa");
-        modelo.addColumn("Hora entrada");
-        modelo.addColumn("Hora salida");
+        modelo.addColumn("ID Registro");
+        modelo.addColumn("Placa");
         modelo.addColumn("Fecha");
-        modelo.addColumn("Tipo Vehiculo");
+        modelo.addColumn("Hora Entrada");
+        modelo.addColumn("Tipo de vehiculo");
 
         tbFactura.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-//            sql = "Select númeroPlaca , horaEntrada , horaSalida, fecha, fk_tipoVehiculo"
-//                    + "From registro " + "where númeroPlaca ='" + txtPlaca.getText() + "'";
-
-            sql = "SELECT factura.* FROM factura "
-                    + "WHERE registro=" + txtPlaca.getText() + "";
+            sql = "SELECT id_registo, númeroPlaca, fecha, horaEntrada, fk_tipoVehiculo FROM registro WHERE númeroPlaca ='" + txtPlaca.getText() + "' and fecha = '" + txtFecha.getText() + "'";
 
         }
-
         String[] datos = new String[5];
         try {
             Statement st = cn.createStatement();
@@ -60,94 +55,179 @@ public class facturaSalida extends javax.swing.JFrame {
                 modelo.addRow(datos);
             }
             tbFactura.setModel(modelo);
-        } catch (SQLException e) {
-            System.out.println(e);
-
+        } catch (SQLException ex) {
+            System.out.println(ex);
         }
+        tbFactura.setVisible(true);
+
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        Calcular = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
-        txtPlaca = new javax.swing.JTextField();
-        txtTipoVehiculo = new javax.swing.JTextField();
-        txthEntrada = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         txthSalida = new javax.swing.JTextField();
-        txtTotalHoras = new javax.swing.JTextField();
-        txtMonto = new javax.swing.JTextField();
-        txtTotalPapar = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtTotalPapar = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtMontoExtra = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtMonto = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtTotalHoras = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtPlaca = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        btnBuscarRegistro = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbFactura = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        txtMontoExtra = new javax.swing.JTextField();
-        btnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Fecha:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 98, -1, -1));
+        btnMenu.setText("Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, 107, -1));
 
-        jLabel2.setText("Numero de Placa:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 44, -1, -1));
+        jLabel17.setText("Total a pagar");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 510, -1, -1));
 
-        jLabel3.setText("Tipo de Vehiculo:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 150, -1, -1));
+        jLabel16.setText("Montro extra");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 450, -1, -1));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 450, 100, -1));
 
-        jLabel4.setText("Hora de entrada:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 196, -1, -1));
+        jLabel15.setText("Monto");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 400, -1, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 400, 100, -1));
+
+        Calcular.setText("Calcular");
+        getContentPane().add(Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, -1, -1));
+
+        jLabel4.setText("Cantidad de horas");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 350, -1, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 100, -1));
+
+        jLabel3.setText("Tipo Vehiculo");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 290, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 290, 100, -1));
+
+        jTextField1.setText("F");
+        jTextField1.setEnabled(false);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 82, -1));
+
+        jLabel10.setText("Estado");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, -1, -1));
+        getContentPane().add(txthSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 82, -1));
 
         jLabel5.setText("Hora de Salida:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 256, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, -1, -1));
 
-        jLabel6.setText("Total de Horas:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 309, -1, -1));
+        jButton1.setText("Agregar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, -1));
 
-        jLabel7.setText("Monto:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 357, -1, -1));
-
-        jLabel8.setText("Monto Extra:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 407, -1, -1));
-
-        jLabel9.setText("Total a Pagar:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 429, -1, 20));
-        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 95, 80, -1));
-        getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 41, 80, -1));
-        getContentPane().add(txtTipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 147, 82, -1));
-        getContentPane().add(txthEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 82, -1));
-        getContentPane().add(txthSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 253, 82, -1));
-        getContentPane().add(txtTotalHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 306, 82, -1));
-        getContentPane().add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 354, 82, -1));
-        getContentPane().add(txtTotalPapar, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 428, 83, -1));
-
-        btnAceptar.setText("Aceptar");
+        btnAceptar.setText("Guardar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 427, -1, -1));
+        getContentPane().add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        getContentPane().add(txtTotalPapar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 83, -1));
 
-        jButton2.setText("Atras");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLabel9.setText("Total a Pagar:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 82, 20));
+
+        txtMontoExtra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                txtMontoExtraActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(692, 427, -1, -1));
+        getContentPane().add(txtMontoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 82, -1));
+
+        jLabel8.setText("Monto Extra:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+        getContentPane().add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 90, -1));
+
+        jLabel7.setText("Monto:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+
+        jLabel6.setText("Total de Horas:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+        getContentPane().add(txtTotalHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, -1));
+
+        jLabel14.setText("ID registro");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 90, -1));
+
+        jLabel11.setText("Guardar el pago");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, -1));
+
+        jLabel2.setText("Numero de Placa:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, -1, -1));
+        getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 80, -1));
+
+        jLabel1.setText("Fecha:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, -1, -1));
+        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, 80, -1));
+
+        btnBuscarRegistro.setText("Buscar");
+        btnBuscarRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarRegistroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 350, -1));
+
+        jLabel12.setText("Buscar el vehiculo");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
+
+        jLabel18.setText("Calcular montos");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel13.setText("Salida del vehiculo");
+
+        jLabel19.setText("ID registro");
 
         tbFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -163,23 +243,6 @@ public class facturaSalida extends javax.swing.JFrame {
         tbFactura.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tbFactura);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 40, 584, 310));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtMontoExtra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMontoExtraActionPerformed(evt);
-            }
-        });
-
-        btnMenu.setText("Menu");
-        btnMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMenuActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -187,52 +250,62 @@ public class facturaSalida extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(txtMontoExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(440, 440, 440)
+                        .addComponent(jLabel13))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(btnMenu)))
-                .addContainerGap(679, Short.MAX_VALUE))
+                        .addGap(401, 401, 401)
+                        .addComponent(jLabel19)
+                        .addGap(48, 48, 48)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 380, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(184, 184, 184))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(404, Short.MAX_VALUE)
-                .addComponent(txtMontoExtra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnMenu)
-                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 490));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+
+
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+
+        dispose();
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     private void txtMontoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoExtraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMontoExtraActionPerformed
 
-    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        Datos("");
+    private void btnBuscarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRegistroActionPerformed
 
+        mostrarVehiculoFacturar("");
 
-    }//GEN-LAST:event_btnAceptarActionPerformed
+    }//GEN-LAST:event_btnBuscarRegistroActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-    
-        dispose();
-
-
-    }//GEN-LAST:event_btnMenuActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -241,7 +314,7 @@ public class facturaSalida extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -267,10 +340,23 @@ public class facturaSalida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Calcular;
     private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnBuscarRegistro;
     private javax.swing.JButton btnMenu;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -281,15 +367,20 @@ public class facturaSalida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JTable tbFactura;
     private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtMontoExtra;
     private javax.swing.JTextField txtPlaca;
-    private javax.swing.JTextField txtTipoVehiculo;
     private javax.swing.JTextField txtTotalHoras;
     private javax.swing.JTextField txtTotalPapar;
-    private javax.swing.JTextField txthEntrada;
     private javax.swing.JTextField txthSalida;
     // End of variables declaration//GEN-END:variables
 }
