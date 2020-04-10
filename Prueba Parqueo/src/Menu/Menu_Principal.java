@@ -108,6 +108,8 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     public void mostrardatosTotalVehiculosDia(String valor) {
 
+       
+
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Placa de vehículos");
 
@@ -149,23 +151,21 @@ public class Menu_Principal extends javax.swing.JFrame {
         tbTotal.setVisible(true);
 
     }
-    
-    
-        public void mostrarIDTrabajador(String valor) {
 
-        Login.Login me = new Login.Login();
+    public void mostrarIDTrabajador(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("ID");
-        modelo.addColumn("Usuario");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Apellido");
 
         tbUsuarioID.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            //sql = "SELECT id_usuario, nombreUsuario FROM usuario WHERE nombreUsuario = '" + me.getUsuarioTXT() + "'";
+            sql = "SELECT id_usuario, nombre, primerApellido FROM usuario WHERE nombreUsuario =  '" + txtIDparametro.getText() + "'";
 
         }
-        String[] datos = new String[1];
+        String[] datos = new String[3];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -173,6 +173,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
                 datos[0] = rs.getString(1);
                 datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
 
                 modelo.addRow(datos);
             }
@@ -181,11 +182,9 @@ public class Menu_Principal extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-       tbUsuarioID.setVisible(true);
+        tbUsuarioID.setVisible(true);
 
-         
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -210,6 +209,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         txtCantiTotal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        txtIDparametro = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         EmpleadoR = new javax.swing.JMenu();
         Vehiculo = new javax.swing.JMenu();
@@ -318,9 +318,12 @@ public class Menu_Principal extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
 
         jLabel5.setText("Usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 380));
+        txtIDparametro.setEnabled(false);
+        jPanel1.add(txtIDparametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 160, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 400));
 
         jMenuBar1.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -396,6 +399,10 @@ public class Menu_Principal extends javax.swing.JFrame {
         m.setVisible(true);
         Vehiculo.setVisible(false);
 
+      
+
+        m.txtIdUsuario.setText(txtIDparametro.getText());
+        
         m.mostrardatosTotalVehiculosDiaregistro("");
 
 
@@ -427,6 +434,8 @@ public class Menu_Principal extends javax.swing.JFrame {
         mostrardatosVP("");
         mostrardatosM("");
         mostrardatosTotalVehiculosDia("");
+        mostrarIDTrabajador("");
+
 
     }//GEN-LAST:event_btnActualizarMouseClicked
 
@@ -492,6 +501,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     public javax.swing.JTable tbcantm;
     public javax.swing.JTable tbcantp;
     public javax.swing.JTextField txtCantiTotal;
+    public javax.swing.JTextField txtIDparametro;
     // End of variables declaration//GEN-END:variables
    datosP cc = new datosP();
     Connection cn = cc.conexion();

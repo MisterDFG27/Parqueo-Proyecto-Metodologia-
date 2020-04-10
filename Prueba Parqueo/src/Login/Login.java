@@ -14,9 +14,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
+
     int timer;
-   
-    
+
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
@@ -35,20 +35,23 @@ public class Login extends javax.swing.JFrame {
                 Menu_Principal m = new Menu_Principal();
                 m.setVisible(true);
                 dispose();
-                
+
                 // mostrar datos en las tablas del menu 
                 m.mostrardatosVL("");
                 m.mostrardatosVP("");
                 m.mostrardatosM("");
                 m.mostrardatosTotalVehiculosDia("");
 
-            }
-             else{
+                m.txtIDparametro.setText(txtUsuario.getText());
+
+                m.mostrarIDTrabajador("");
+
+            } else {
                 JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectas, intentelo nuvamente. \n Quedan " + (3 - timer) + "intentos");
                 txtUsuario.setText("");
                 PwClave.setText("");
                 timer = timer + 1;
-                
+
             }
             if (cap.equals("2")) {
                 Menu_Principal m = new Menu_Principal();
@@ -58,29 +61,33 @@ public class Login extends javax.swing.JFrame {
                 m.EmpleadoR.setVisible(false);
                 m.Reporte1Menu.setVisible(false);
                 m.Reporte2Menu.setVisible(false);
-                
-            // mostrar datos en las tablas del menu        
+
+                // mostrar datos en las tablas del menu        
                 m.mostrardatosVL("");
                 m.mostrardatosVP("");
                 m.mostrardatosM("");
                 m.mostrardatosTotalVehiculosDia("");
 
-            } else{
+                m.txtIDparametro.setText(txtUsuario.getText());
+
+                m.mostrarIDTrabajador("");
+
+            } else {
                 JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectas, intentelo nuvamente. \n Quedan " + (3 - timer) + "intentos");
                 txtUsuario.setText("");
                 PwClave.setText("");
                 timer = timer + 1;
-                
+
             }
-             if(timer == 3){
-                JOptionPane.showMessageDialog(null, "Ha excedido el numero de intentos.","Por favor ingrese a 'Recuperar contraseña' para enviar su usuario y contraseña por correo",JOptionPane.OK_OPTION);
+            if (timer == 3) {
+                JOptionPane.showMessageDialog(null, "Ha excedido el numero de intentos.", "Por favor ingrese a 'Recuperar contraseña' para enviar su usuario y contraseña por correo", JOptionPane.OK_OPTION);
                 btnIngresar.enable(false);
             }
-           
+
             /*
-            else if ((!cap.equals("1")) && (!cap.equals("2"))) {
-                JOptionPane.showMessageDialog(this, "No existe sus datos");
-            }*/
+             else if ((!cap.equals("1")) && (!cap.equals("2"))) {
+             JOptionPane.showMessageDialog(this, "No existe sus datos");
+             }*/
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -201,7 +208,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(PwClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addComponent(btnrecuperar)
                 .addContainerGap())
         );
@@ -222,9 +229,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnrecuperarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnrecuperarMouseClicked
-      envio11 e = new envio11();
-      e.setVisible(true);
+        envio11 e = new envio11();
+        e.setVisible(true);
     }//GEN-LAST:event_btnrecuperarMouseClicked
+
     public class conectar {
 
         Connection conect = null;
@@ -277,7 +285,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField PwClave;
+    public javax.swing.JPasswordField PwClave;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JLabel btnrecuperar;
     private javax.swing.JLabel jLabel1;
@@ -287,7 +295,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
      conectar cc = new conectar();
     Connection cn = cc.conexion();
