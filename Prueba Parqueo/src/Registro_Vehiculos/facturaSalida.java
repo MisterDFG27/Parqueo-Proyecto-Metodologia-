@@ -2,10 +2,12 @@ package Registro_Vehiculos;
 
 import Conexion.datosP;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -33,14 +35,16 @@ public class facturaSalida extends javax.swing.JFrame {
         modelo.addColumn("Fecha");
         modelo.addColumn("Hora Entrada");
         modelo.addColumn("Tipo de vehiculo");
+        modelo.addColumn("Hora Salida");
+        modelo.addColumn("Estado");
 
         tbFactura.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT id_registo, númeroPlaca, fecha, horaEntrada, fk_tipoVehiculo FROM registro WHERE númeroPlaca ='" + txtPlaca.getText() + "' and fecha = '" + txtFecha.getText() + "'";
+            sql = "SELECT id_registo, númeroPlaca, fecha, horaEntrada, fk_tipoVehiculo, horaSalida, fk_estado FROM registro WHERE númeroPlaca ='" + txtPlaca.getText() + "' and fecha = '" + txtFecha.getText() + "'";
 
         }
-        String[] datos = new String[5];
+        String[] datos = new String[7];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -51,6 +55,8 @@ public class facturaSalida extends javax.swing.JFrame {
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
                 datos[4] = rs.getString(5);
+                datos[5] = rs.getString(6);
+                datos[6] = rs.getString(7);
 
                 modelo.addRow(datos);
             }
@@ -78,11 +84,11 @@ public class facturaSalida extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField();
+        txtEstadoSalida = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txthSalida = new javax.swing.JTextField();
+        txtHSalida = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BtnSalidaregistro = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
         txtTotalPapar = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -105,7 +111,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtIDRegistro = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbFactura = new javax.swing.JTable();
 
@@ -145,24 +151,24 @@ public class facturaSalida extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 290, 100, -1));
 
-        jTextField1.setText("F");
-        jTextField1.setEnabled(false);
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 82, -1));
+        txtEstadoSalida.setText("F");
+        txtEstadoSalida.setEnabled(false);
+        getContentPane().add(txtEstadoSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 82, -1));
 
         jLabel10.setText("Estado");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, -1, -1));
-        getContentPane().add(txthSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 82, -1));
+        getContentPane().add(txtHSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 82, -1));
 
         jLabel5.setText("Hora de Salida:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, -1, -1));
 
-        jButton1.setText("Sacar registro");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnSalidaregistro.setText("Sacar registro");
+        BtnSalidaregistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnSalidaregistroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, -1));
+        getContentPane().add(BtnSalidaregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, -1));
 
         btnAceptar.setText("Guardar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -256,12 +262,12 @@ public class facturaSalida extends javax.swing.JFrame {
                         .addGap(401, 401, 401)
                         .addComponent(jLabel19)
                         .addGap(38, 38, 38)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtIDRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(535, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 380, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(184, 184, 184))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,11 +279,11 @@ public class facturaSalida extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(308, Short.MAX_VALUE))
+                    .addComponent(txtIDRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 640));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -287,9 +293,19 @@ public class facturaSalida extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnAceptarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void BtnSalidaregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalidaregistroActionPerformed
+
+        try {
+            PreparedStatement pst = cn.prepareStatement("UPDATE registro SET horaSalida='" + txtHSalida.getText() + "',"
+                    + "fk_estado='" + txtEstadoSalida.getText() + "' WHERE id_registo='" + txtIDRegistro.getText() + "'");
+            pst.executeUpdate();
+            mostrarVehiculoFacturar("");
+            JOptionPane.showMessageDialog(this, "Seguir con la factura");
+
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
+    }//GEN-LAST:event_BtnSalidaregistroActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
 
@@ -340,11 +356,11 @@ public class facturaSalida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnSalidaregistro;
     private javax.swing.JButton Calcular;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnBuscarRegistro;
     private javax.swing.JButton btnMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -367,20 +383,20 @@ public class facturaSalida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTable tbFactura;
+    private javax.swing.JTextField txtEstadoSalida;
     private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtHSalida;
+    private javax.swing.JTextField txtIDRegistro;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtMontoExtra;
     private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtTotalHoras;
     private javax.swing.JTextField txtTotalPapar;
-    private javax.swing.JTextField txthSalida;
     // End of variables declaration//GEN-END:variables
 }
