@@ -67,7 +67,7 @@ public class Login extends javax.swing.JFrame {
 
             }else if (timer == 3) {
                 JOptionPane.showMessageDialog(null, "Ha excedido el numero de intentos.", "Por favor ingrese a 'Recuperar contraseña' para enviar su usuario y contraseña por correo", JOptionPane.OK_OPTION);
-                btnIngresar.enable(false);
+                btnIngresar.setEnabled(false);
             }else {
                 JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectas, intentelo nuvamente. \n Quedan " + (3 - timer) + "intentos");
                 txtUsuario.setText("");
