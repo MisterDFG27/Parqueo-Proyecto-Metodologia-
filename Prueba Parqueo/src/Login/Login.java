@@ -43,6 +43,13 @@ public class Login extends javax.swing.JFrame {
                 m.mostrardatosTotalVehiculosDia("");
 
             }
+             else{
+                JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectas, intentelo nuvamente. \n Quedan " + (3 - timer) + "intentos");
+                txtUsuario.setText("");
+                PwClave.setText("");
+                timer = timer + 1;
+                
+            }
             if (cap.equals("2")) {
                 Menu_Principal m = new Menu_Principal();
                 m.setVisible(true);
@@ -58,20 +65,18 @@ public class Login extends javax.swing.JFrame {
                 m.mostrardatosM("");
                 m.mostrardatosTotalVehiculosDia("");
 
-            }
-            else if(timer == 3){
-                JOptionPane.showMessageDialog(null, "Ha excedido el numero de intentos.","Por favor ingrese a 'Recuperar contraseña' para enviar su usuario y contraseña por correo",JOptionPane.OK_OPTION);
-             
-                
-                btnIngresar.enable(false);
-            }
-            else{
+            } else{
                 JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectas, intentelo nuvamente. \n Quedan " + (3 - timer) + "intentos");
                 txtUsuario.setText("");
                 PwClave.setText("");
                 timer = timer + 1;
                 
             }
+             if(timer == 3){
+                JOptionPane.showMessageDialog(null, "Ha excedido el numero de intentos.","Por favor ingrese a 'Recuperar contraseña' para enviar su usuario y contraseña por correo",JOptionPane.OK_OPTION);
+                btnIngresar.enable(false);
+            }
+           
             /*
             else if ((!cap.equals("1")) && (!cap.equals("2"))) {
                 JOptionPane.showMessageDialog(this, "No existe sus datos");
