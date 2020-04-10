@@ -204,7 +204,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
                 txtPlaca.setEnabled(true);
                 txtFechaI.setEnabled(true);
                 txtHoraEntrada.setEnabled(true);
-                txtIdUsuario.setEnabled(true);
+             
 
             }
             //-----------------------
