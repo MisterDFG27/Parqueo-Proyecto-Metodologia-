@@ -212,6 +212,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         EmpleadoR = new javax.swing.JMenu();
         Vehiculo = new javax.swing.JMenu();
         Factura = new javax.swing.JMenu();
+        Mantenimiento = new javax.swing.JMenu();
         Reporte1Menu = new javax.swing.JMenu();
         Reporte2Menu = new javax.swing.JMenu();
         CerrarSesion = new javax.swing.JMenu();
@@ -274,13 +275,13 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbcantm);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 90, 51));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, 90, 51));
 
         jLabel3.setText("Motos");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
 
         jLabel2.setText("Pesados");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, -1));
 
         tbcantp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbcantp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -294,10 +295,10 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbcantp);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 90, 50));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 90, 50));
 
         jLabel1.setText("Livianos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
 
         tbcantliv.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbcantliv.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -311,7 +312,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(tbcantliv);
 
-        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 90, 50));
+        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 90, 50));
 
         btnActualizar.setText("Actualizar");
         btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -319,7 +320,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 btnActualizarMouseClicked(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, -1));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
 
@@ -353,23 +354,33 @@ public class Menu_Principal extends javax.swing.JFrame {
         });
         jMenuBar1.add(Factura);
 
-        Reporte1Menu.setText("Reporte 1");
+        Mantenimiento.setText("Mantenimiento");
+        Mantenimiento.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Mantenimiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MantenimientoMouseClicked(evt);
+            }
+        });
+
+        Reporte1Menu.setText("Reporte General");
         Reporte1Menu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Reporte1Menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Reporte1MenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(Reporte1Menu);
+        Mantenimiento.add(Reporte1Menu);
 
-        Reporte2Menu.setText("Reporte 2");
+        Reporte2Menu.setText("Reporte Específico");
         Reporte2Menu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Reporte2Menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Reporte2MenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(Reporte2Menu);
+        Mantenimiento.add(Reporte2Menu);
+
+        jMenuBar1.add(Mantenimiento);
 
         CerrarSesion.setForeground(new java.awt.Color(255, 0, 0));
         CerrarSesion.setText("Cerrar Sesión");
@@ -436,6 +447,10 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnActualizarMouseClicked
 
+    private void MantenimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MantenimientoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MantenimientoMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -475,6 +490,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu CerrarSesion;
     public javax.swing.JMenu EmpleadoR;
     private javax.swing.JMenu Factura;
+    public javax.swing.JMenu Mantenimiento;
     public javax.swing.JMenu Reporte1Menu;
     public javax.swing.JMenu Reporte2Menu;
     public javax.swing.JMenu Vehiculo;

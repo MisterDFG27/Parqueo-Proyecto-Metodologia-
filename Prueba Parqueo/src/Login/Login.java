@@ -52,6 +52,7 @@ public class Login extends javax.swing.JFrame {
                 dispose();
 
                 m.EmpleadoR.setVisible(false);
+                m.Mantenimiento.setVisible(false);
                 m.Reporte1Menu.setVisible(false);
                 m.Reporte2Menu.setVisible(false);
 
