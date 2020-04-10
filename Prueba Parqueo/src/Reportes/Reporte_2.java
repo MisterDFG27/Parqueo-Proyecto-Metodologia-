@@ -433,6 +433,8 @@ public class Reporte_2 extends javax.swing.JFrame {
         jLabel8.setText("Fecha Final");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, -1, -1));
         jPanel1.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, -1, -1));
+
+        txtFecha2.setEnabled(false);
         jPanel1.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 340, -1, -1));
 
         btnFiltrar.setText("Filtrar por 1 fecha");
