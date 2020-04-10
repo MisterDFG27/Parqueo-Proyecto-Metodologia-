@@ -280,13 +280,13 @@ public class Reporte1 extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         tbMontoR = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        btnsalir4 = new javax.swing.JButton();
         txtfecha = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JButton();
         btnreporte = new javax.swing.JButton();
         btnmenu = new javax.swing.JButton();
+        btnsalir4 = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -439,16 +439,6 @@ public class Reporte1 extends javax.swing.JFrame {
         jLabel7.setText("Cierre de caja");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 610, -1, -1));
 
-        btnsalir4.setBackground(new java.awt.Color(0, 0, 0));
-        btnsalir4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        btnsalir4.setText("Salir");
-        btnsalir4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsalir4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnsalir4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 620, 100, 30));
-
         txtfecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtfecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtfecha.setMaxSelectableDate(new java.util.Date(253370790075000L));
@@ -469,7 +459,7 @@ public class Reporte1 extends javax.swing.JFrame {
                 btnlimpiarActionPerformed(evt);
             }
         });
-        jPanel3.add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 580, 100, 30));
+        jPanel3.add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, 100, 30));
 
         btnreporte.setBackground(new java.awt.Color(0, 0, 0));
         btnreporte.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -479,7 +469,7 @@ public class Reporte1 extends javax.swing.JFrame {
                 btnreporteActionPerformed(evt);
             }
         });
-        jPanel3.add(btnreporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 100, 30));
+        jPanel3.add(btnreporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 660, 100, 30));
 
         btnmenu.setText("Menu");
         btnmenu.addActionListener(new java.awt.event.ActionListener() {
@@ -488,6 +478,16 @@ public class Reporte1 extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, -1, 30));
+
+        btnsalir4.setBackground(new java.awt.Color(0, 0, 0));
+        btnsalir4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        btnsalir4.setText("Salir");
+        btnsalir4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalir4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnsalir4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 100, 30));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
 

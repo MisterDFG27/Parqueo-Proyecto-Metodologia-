@@ -108,8 +108,6 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     public void mostrardatosTotalVehiculosDia(String valor) {
 
-       
-
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Placa de vehículos");
 
@@ -191,16 +189,6 @@ public class Menu_Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        tbcantliv = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tbcantp = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tbcantm = new javax.swing.JTable();
-        btnActualizar = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbTotal = new javax.swing.JTable();
@@ -210,6 +198,16 @@ public class Menu_Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtIDparametro = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbcantm = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbcantp = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tbcantliv = new javax.swing.JTable();
+        btnActualizar = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         EmpleadoR = new javax.swing.JMenu();
         Vehiculo = new javax.swing.JMenu();
@@ -220,65 +218,6 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setText("Motos");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, -1, -1));
-
-        tbcantliv.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tbcantliv.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tbcantliv.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane7.setViewportView(tbcantliv);
-
-        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 90, 50));
-
-        jLabel1.setText("Livianos");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
-
-        tbcantp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tbcantp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tbcantp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane4.setViewportView(tbcantp);
-
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 90, 50));
-
-        jLabel2.setText("Pesados");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, -1, -1));
-
-        tbcantm.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tbcantm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tbcantm.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(tbcantm);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 90, 51));
-
-        btnActualizar.setText("Actualizar");
-        btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnActualizarMouseClicked(evt);
-            }
-        });
-        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -295,7 +234,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbTotal);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 249, 140));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 249, 140));
 
         tbUsuarioID.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbUsuarioID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -312,18 +251,77 @@ public class Menu_Principal extends javax.swing.JFrame {
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 249, 60));
 
         txtCantiTotal.setEnabled(false);
-        jPanel1.add(txtCantiTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 95, 35));
+        jPanel1.add(txtCantiTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 202, 130, 30));
 
         jLabel4.setText("Total de vehículos en el momento");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
         jLabel5.setText("Usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, -1, -1));
 
         txtIDparametro.setEnabled(false);
         jPanel1.add(txtIDparametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 160, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 400));
+        tbcantm.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbcantm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbcantm.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tbcantm);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 90, 51));
+
+        jLabel3.setText("Motos");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
+
+        jLabel2.setText("Pesados");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
+
+        tbcantp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbcantp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbcantp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(tbcantp);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 90, 50));
+
+        jLabel1.setText("Livianos");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
+
+        tbcantliv.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbcantliv.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbcantliv.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane7.setViewportView(tbcantliv);
+
+        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 90, 50));
+
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnActualizarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
 
         jMenuBar1.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -399,10 +397,9 @@ public class Menu_Principal extends javax.swing.JFrame {
         m.setVisible(true);
         Vehiculo.setVisible(false);
 
-      
+        m.txtIDparametroV.setText(txtIDparametro.getText());
+        m.mostrarIDTrabajadorV("");
 
-        m.txtIdUsuario.setText(txtIDparametro.getText());
-        
         m.mostrardatosTotalVehiculosDiaregistro("");
 
 
