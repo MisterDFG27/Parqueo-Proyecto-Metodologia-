@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,6 +16,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
     String CantidV;
     String placa;
     int cont;
+    String date;
 
     public Registro_Vehiculos() {
         initComponents();
@@ -23,6 +25,13 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         txtRequeridoPlaca.setVisible(false);
         txtRequeridoHora.setVisible(false);
         txtRequeridoFecha.setVisible(false);
+
+    }
+
+    public void processCalendar() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        //yyyy-MM-dd
+        date = dateFormat.format(txtFechaI.getDate());
 
     }
 
@@ -36,7 +45,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtPlaca = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtFechaI = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtHoraEntrada = new javax.swing.JTextField();
         cmbTipoV = new javax.swing.JComboBox();
@@ -62,6 +70,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         tbUsuarioIDV = new javax.swing.JTable();
         txtIDparametroV = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        txtFechaI = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +97,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
 
         jLabel5.setText("Fecha de ingreso");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, -1, -1));
-        jPanel1.add(txtFechaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 120, -1));
 
         jLabel6.setText("Hora de entrada");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, -1));
@@ -185,6 +193,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
 
         jLabel13.setText("Usuario");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
+        jPanel1.add(txtFechaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 120, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 580));
 
@@ -230,8 +239,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
                 txtPlaca.setEnabled(true);
                 txtFechaI.setEnabled(true);
                 txtHoraEntrada.setEnabled(true);
-                 txtIdUsuario.setEnabled(true);
-             
+                txtIdUsuario.setEnabled(true);
 
             }
             //-----------------------
@@ -260,25 +268,14 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
             txtRequeridoID.setVisible(false);
 
         }
-        
-        
+
         if (txtPlaca.getText().equals("")) {
             txtRequeridoPlaca.setVisible(true);
             cont++;
         } else {
             txtRequeridoPlaca.setVisible(false);
         }
-        
-        
 
-        if (txtFechaI.getText().equals("")) {
-            txtRequeridoFecha.setVisible(true);
-            cont++;
-        } else {
-            txtRequeridoFecha.setVisible(false);
-        }
-        
-        
         if (txtHoraEntrada.getText().equals("")) {
             txtRequeridoHora.setVisible(true);
             cont++;
@@ -286,18 +283,17 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
             txtRequeridoHora.setVisible(false);
         }
 
-        
-       
         if (cont == 0) {
 
             try {
                 datosP cc = new datosP();
                 Connection cn = cc.conexion();
+                processCalendar();
 
                 PreparedStatement pst = cn.prepareStatement("INSERT INTO registro(númeroPlaca,"
                         + "fecha,horaEntrada,fk_tipoVehiculo,fk_usuario,fk_estado) VALUES (?,?,?,?,?,?)");
                 pst.setString(1, txtPlaca.getText());
-                pst.setString(2, txtFechaI.getText());
+                pst.setString(2, date);
                 pst.setString(3, txtHoraEntrada.getText());
                 pst.setString(4, (String) cmbTipoV.getSelectedItem());
                 pst.setString(5, txtIdUsuario.getText());
@@ -310,7 +306,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
             }
 
             txtPlaca.setText("");
-            txtFechaI.setText("");
             txtHoraEntrada.setText("");
 
             txtRequeridoID.setVisible(false);
@@ -319,13 +314,12 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
             txtRequeridoFecha.setVisible(false);
 
             mostrardatosTotalVehiculosDiaregistro("");
-            
-        JOptionPane.showMessageDialog(this, "Registro agregado");
+
+            JOptionPane.showMessageDialog(this, "Registro agregado");
         }
     }//GEN-LAST:event_btnguardarActionPerformed
 
-    
-        public void mostrarIDTrabajadorV(String valor) {
+    public void mostrarIDTrabajadorV(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("ID");
@@ -358,9 +352,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         tbUsuarioIDV.setVisible(true);
 
     }
-    
-    
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -416,7 +408,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
     public javax.swing.JTable tbtotal;
     public javax.swing.JTextField txtCantiTotal;
     private javax.swing.JTextField txtEstado;
-    public javax.swing.JTextField txtFechaI;
+    private com.toedter.calendar.JDateChooser txtFechaI;
     private javax.swing.JTextField txtHoraEntrada;
     public javax.swing.JTextField txtIDparametroV;
     public javax.swing.JTextField txtIdUsuario;
