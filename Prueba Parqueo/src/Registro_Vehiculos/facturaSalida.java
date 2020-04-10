@@ -21,10 +21,18 @@ public class facturaSalida extends javax.swing.JFrame {
     String date;
     datosP cc = new datosP();
     Connection cn = cc.conexion();
+    String fechacalendario;
 
     public facturaSalida() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+
+    public void processCalendar() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        //yyyy-MM-dd
+        fechacalendario = dateFormat.format(txtFecha.getDate());
+
     }
 
     public void mostrarVehiculoFacturar(String valor) {
@@ -39,9 +47,11 @@ public class facturaSalida extends javax.swing.JFrame {
         modelo.addColumn("Estado");
 
         tbFactura.setModel(modelo);
+        processCalendar();
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT id_registo, númeroPlaca, fecha, horaEntrada, fk_tipoVehiculo, horaSalida, fk_estado FROM registro WHERE númeroPlaca ='" + txtPlaca.getText() + "' and fecha = '" + txtFecha.getText() + "'";
+            sql = "SELECT id_registo, númeroPlaca, fecha, horaEntrada, fk_tipoVehiculo, horaSalida, fk_estado FROM registro "
+                    + "WHERE númeroPlaca ='" + txtPlaca.getText() + "' and fecha = '" + fechacalendario + "'";
 
         }
         String[] datos = new String[7];
@@ -134,7 +144,6 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtPlaca = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
         btnBuscarRegistro = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -173,6 +182,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         cbHorario = new javax.swing.JComboBox<String>();
         txtTotHoras = new javax.swing.JTextField();
+        txtFecha = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -228,7 +238,6 @@ public class facturaSalida extends javax.swing.JFrame {
 
         jLabel1.setText("Fecha:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, -1, -1));
-        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, 80, -1));
 
         btnBuscarRegistro.setText("Buscar");
         btnBuscarRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -347,6 +356,7 @@ public class facturaSalida extends javax.swing.JFrame {
         cbHorario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Diurno", "Nocturno" }));
         jPanel1.add(cbHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 310, 100, -1));
         jPanel1.add(txtTotHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 520, 70, -1));
+        jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 60, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 600));
 
@@ -468,7 +478,7 @@ public class facturaSalida extends javax.swing.JFrame {
     private javax.swing.JTable tbFactura;
     private javax.swing.JTextField txtCantHoras;
     private javax.swing.JTextField txtEstadoSalida;
-    private javax.swing.JTextField txtFecha;
+    private com.toedter.calendar.JDateChooser txtFecha;
     private javax.swing.JTextField txtHEntrada;
     private javax.swing.JTextField txtHSalida;
     private javax.swing.JTextField txtHoraSalida;
