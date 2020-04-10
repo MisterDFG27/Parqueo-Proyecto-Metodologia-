@@ -1,5 +1,6 @@
 package Login;
 
+import Conexion.Conexion1;
 import Conexion.datosP;
 import Menu.Menu_Principal;
 
@@ -14,12 +15,13 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-
+    
     int timer;
 
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     void acceder(String usuario, String clave) {
@@ -222,7 +224,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnrecuperarMouseClicked
 
     public class conectar {
-
+    
+   
         Connection conect = null;
 
         public Connection conexion() {
@@ -230,7 +233,7 @@ public class Login extends javax.swing.JFrame {
 
                 //Cargamos el Driver MySQL
                 Class.forName("com.mysql.jdbc.Driver");
-                conect = DriverManager.getConnection("jdbc:mysql://localhost/parqueo", "root", "");
+                conect = DriverManager.getConnection("jdbc:mysql://localhost:3308/parqueo", "root", "");
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error " + e);
@@ -285,6 +288,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
-     conectar cc = new conectar();
+
+    conectar cc = new conectar();
     Connection cn = cc.conexion();
 }

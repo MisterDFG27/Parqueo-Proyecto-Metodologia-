@@ -74,7 +74,7 @@ public class envio11 extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEnviar))
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -83,32 +83,72 @@ public class envio11 extends javax.swing.JFrame {
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
 
         try {
+
+            PreparedStatement ps;
+            ResultSet rs;
+            Conexion1 conn = new Conexion1();
+            Connection con = conn.getConexion();
+
+            String sql = "SELECT nombreUsuario, contraseña FROM `usuario` WHERE email = "+txtCorreo.getText();
+            String[] correos_destinos = null;
+
+            try {
+                ps = con.prepareStatement(sql);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rd = rs.getMetaData(); // Obtenemos el metadata desde el resulset
+                int filas = rd.getColumnCount();
+                correos_destinos = new String[filas + 1];
+                int indice = 0;
+
+                while (rs.next()) {
+                    correos_destinos[indice] = rs.getString("email");
+                    indice++;
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(envio11.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+//---------------------Email
             Properties props = new Properties();
             props.setProperty("mail.smtp.host", "smtp.gmail.com");
             props.setProperty("mail.smtp.starttls.enable", "true");
             props.setProperty("mail.smtp.port", "587");
             props.setProperty("mail.smtp.auth", "true");
 
+// Preparamos la sesion
             Session session = Session.getDefaultInstance(props);
 
-            String correoRemitente = "parqueoguapiles@gmail.com";
-            String passwordRemitente = "guapiles123";
-            String correoReceptor = txtCorreo.getText();
-            String asunto = "ULATINA";
-            String mensaje = "Usted esta moroso";
+//Recoger los datos
+            String correoRemitente = "dfgtoledo27@outlook.es";
+            String passRemitente = "biggy987654321";
+            String asunto = "El asunto";
+            String mensaje = sql;
 
+// Construimos el mensaje
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(correoRemitente));
 
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(correoReceptor));
+            Address[] receptores = new Address[correos_destinos.length];
+            int j = 0;
+            while (j < correos_destinos.length) {
+                receptores[j] = new InternetAddress(correos_destinos[j]);
+                j++;
+            }
+
+//receptor.
+            message.addRecipients(Message.RecipientType.TO, receptores);
             message.setSubject(asunto);
             message.setText(mensaje, "ISO-8859-1", "html");
 
             Transport t = session.getTransport("smtp");
-            t.connect(correoRemitente, passwordRemitente);
+            t.connect(correoRemitente, passRemitente);
             t.sendMessage(message, message.getRecipients(Message.RecipientType.TO));
-            t.close();
 
+// Cierre de la conexion.
+            t.close();
+            
             JOptionPane.showMessageDialog(null, "Correo Electronico Enviado");
 
         } catch (AddressException ex) {
