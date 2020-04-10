@@ -129,8 +129,8 @@ public class facturaSalida extends javax.swing.JFrame {
     private void initComponents() {
 
         btnMenu = new javax.swing.JButton();
-        btnAceptar = new javax.swing.JButton();
-        txtTotalPapar = new javax.swing.JTextField();
+        btnInsertarF = new javax.swing.JButton();
+        txtTotalPagar = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtMontoExtra = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -139,7 +139,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtTotalHoras = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtIDregistro = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtPlaca = new javax.swing.JTextField();
@@ -150,7 +150,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        txtIDRegistro = new javax.swing.JTextField();
+        txtIDRegistroBusqueda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbFactura = new javax.swing.JTable();
         txtHoraSalida = new javax.swing.JTextField();
@@ -160,8 +160,8 @@ public class facturaSalida extends javax.swing.JFrame {
         BtnSalidaregistro = new javax.swing.JButton();
         txtCantHoras = new javax.swing.JTextField();
         txtMT = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtMTX = new javax.swing.JTextField();
+        txtTP = new javax.swing.JTextField();
         Calcular = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -195,24 +195,18 @@ public class facturaSalida extends javax.swing.JFrame {
         });
         getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
-        btnAceptar.setText("Guardar");
-        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertarF.setText("Guardar pago");
+        btnInsertarF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAceptarActionPerformed(evt);
+                btnInsertarFActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
-        getContentPane().add(txtTotalPapar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 83, -1));
+        getContentPane().add(btnInsertarF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        getContentPane().add(txtTotalPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 90, -1));
 
         jLabel9.setText("Total a Pagar:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 82, 20));
-
-        txtMontoExtra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMontoExtraActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtMontoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 82, -1));
+        getContentPane().add(txtMontoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 90, -1));
 
         jLabel8.setText("Monto Extra:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
@@ -221,13 +215,13 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel7.setText("Monto:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
-        jLabel6.setText("Total de Horas:");
+        jLabel6.setText("Total de tiempo");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
         getContentPane().add(txtTotalHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, -1));
 
         jLabel14.setText("ID registro");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 90, -1));
+        getContentPane().add(txtIDregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 90, -1));
 
         jLabel11.setText("Guardar el pago");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, -1));
@@ -261,7 +255,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
         jLabel19.setText("ID registro");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 319, -1, -1));
-        jPanel1.add(txtIDRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 316, 86, -1));
+        jPanel1.add(txtIDRegistroBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 316, 90, -1));
 
         tbFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -278,7 +272,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbFactura);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 90, 774, 110));
-        jPanel1.add(txtHoraSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 82, -1));
+        jPanel1.add(txtHoraSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 90, -1));
 
         jLabel5.setText("Hora de Salida:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, -1, -1));
@@ -299,10 +293,15 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1.add(BtnSalidaregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, -1));
         jPanel1.add(txtCantHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 100, -1));
         jPanel1.add(txtMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 400, 100, -1));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 450, 100, -1));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, 107, -1));
+        jPanel1.add(txtMTX, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 450, 100, -1));
+        jPanel1.add(txtTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, 107, -1));
 
         Calcular.setText("Calcular");
+        Calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 560, -1, -1));
 
         jLabel17.setText("Total a pagar");
@@ -363,16 +362,42 @@ public class facturaSalida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+    private void btnInsertarFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarFActionPerformed
+
+        try {
+
+            PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(monto,montoextra,montoTotal,fk_registro,totalHoras) VALUES (?,?,?,?,?)");
+
+            pst.setString(1, txtMonto.getText());
+            pst.setString(2, txtMontoExtra.getText());
+            pst.setString(3, txtTotalPagar.getText());
+            pst.setString(4, txtIDregistro.getText());
+            pst.setString(5, txtTotalHoras.getText());
+
+            pst.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+
+        txtMonto.setText("");
+        txtMontoExtra.setText("");
+        txtTotalPagar.setText("");
+        txtIDregistro.setText("");
+        txtTotalHoras.setText("");
+
+        JOptionPane.showMessageDialog(this, "Factura guardada");
 
 
-    }//GEN-LAST:event_btnAceptarActionPerformed
+    }//GEN-LAST:event_btnInsertarFActionPerformed
 
     private void BtnSalidaregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalidaregistroActionPerformed
 
+        txtIDregistro.setText(txtIDRegistroBusqueda.getText());
+
         try {
             PreparedStatement pst = cn.prepareStatement("UPDATE registro SET horaSalida='" + txtHoraSalida.getText() + "',"
-                    + "fk_estado='" + txtEstadoSalida.getText() + "' WHERE id_registo='" + txtIDRegistro.getText() + "'");
+                    + "fk_estado='" + txtEstadoSalida.getText() + "' WHERE id_registo='" + txtIDRegistroBusqueda.getText() + "'");
             pst.executeUpdate();
             mostrarVehiculoFacturar("");
             JOptionPane.showMessageDialog(this, "Seguir con la factura");
@@ -387,10 +412,6 @@ public class facturaSalida extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnMenuActionPerformed
 
-    private void txtMontoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoExtraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMontoExtraActionPerformed
-
     private void btnBuscarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRegistroActionPerformed
 
         mostrarVehiculoFacturar("");
@@ -398,10 +419,23 @@ public class facturaSalida extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarRegistroActionPerformed
 
     private void btnCarlcularHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarlcularHorasActionPerformed
+
+        txtTotalHoras.setText(txtTotHoras.getText());
+        
+        
         CalcularHoras();
         CalcularMontoXHora();
 
+
     }//GEN-LAST:event_btnCarlcularHorasActionPerformed
+
+    private void CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularActionPerformed
+
+        txtMonto.setText(txtMT.getText());
+        txtMontoExtra.setText(txtMTX.getText());
+        txtTotalPagar.setText(txtTP.getText());
+
+    }//GEN-LAST:event_CalcularActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -439,9 +473,9 @@ public class facturaSalida extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSalidaregistro;
     private javax.swing.JButton Calcular;
-    private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnBuscarRegistro;
     private javax.swing.JButton btnCarlcularHoras;
+    private javax.swing.JButton btnInsertarF;
     private javax.swing.JButton btnMenu;
     private javax.swing.JComboBox<String> cbHorario;
     private javax.swing.JComboBox cbVehiculos;
@@ -472,9 +506,6 @@ public class facturaSalida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTable tbFactura;
     private javax.swing.JTextField txtCantHoras;
     private javax.swing.JTextField txtEstadoSalida;
@@ -482,15 +513,18 @@ public class facturaSalida extends javax.swing.JFrame {
     private javax.swing.JTextField txtHEntrada;
     private javax.swing.JTextField txtHSalida;
     private javax.swing.JTextField txtHoraSalida;
-    private javax.swing.JTextField txtIDRegistro;
+    private javax.swing.JTextField txtIDRegistroBusqueda;
+    private javax.swing.JTextField txtIDregistro;
     private javax.swing.JTextField txtMEntrada;
     private javax.swing.JTextField txtMSalida;
     private javax.swing.JTextField txtMT;
+    private javax.swing.JTextField txtMTX;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtMontoExtra;
     private javax.swing.JTextField txtPlaca;
+    private javax.swing.JTextField txtTP;
     private javax.swing.JTextField txtTotHoras;
     private javax.swing.JTextField txtTotalHoras;
-    private javax.swing.JTextField txtTotalPapar;
+    private javax.swing.JTextField txtTotalPagar;
     // End of variables declaration//GEN-END:variables
 }
