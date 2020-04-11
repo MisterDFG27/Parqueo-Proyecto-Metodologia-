@@ -159,7 +159,7 @@ public class Registro_Empleados extends javax.swing.JFrame {
 
         lblRequeridoUsuario.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoUsuario.setText("Requerido");
-        jPanel1.add(lblRequeridoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, -1, -1));
+        jPanel1.add(lblRequeridoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, -1, -1));
 
         lblRequeridoContraseña.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoContraseña.setText("Requerido");
