@@ -140,7 +140,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 if ((horas > 2) && (canMin < 30 && canMin > 0)) {
 
-                    montoTotal = (1300 + (horas * 600));
+                    montoTotal = (1300 + ((horas-2) * 600));
 
                     montoExtra = montoTotal - 1000;
 
@@ -158,7 +158,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 } else if ((horas > 2)) {
 
-                    montoTotal = 1000 + (horas * 600);
+                    montoTotal = 1000 + ((horas-2) * 600);
 
                     montoExtra = montoTotal - 1000;
 
@@ -171,7 +171,7 @@ public class facturaSalida extends javax.swing.JFrame {
             if (tipoVehiculo == "2") {
                 if ((horas > 2) && (canMin < 30 && canMin > 0)) {
 
-                    montoTotal = (1375 + (horas * 750));
+                    montoTotal = (1375 + ((horas-2) * 750));
 
                     montoExtra = montoTotal - 1000;
 
@@ -189,7 +189,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 } else if (horas > 2) {
 
-                    montoTotal = 1000 + (horas * 750);
+                    montoTotal = 1000 + ((horas-2) * 750);
 
                     montoExtra = montoTotal - 1000;
 
@@ -203,7 +203,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 if ((horas > 2) && (canMin < 30 && canMin > 0)) {
 
-                    montoTotal = (1250 + (horas * 500));
+                    montoTotal = (1250 + ((horas-2) * 500));
 
                     montoExtra = montoTotal - 1000;
 
@@ -221,7 +221,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 } else if (horas > 2) {
 
-                    montoTotal = 1000 + (horas * 500);
+                    montoTotal = 1000 + ((horas-2) * 500);
 
                     montoExtra = montoTotal - 1000;
 
@@ -237,7 +237,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 if ((horas > 2) && (canMin < 30 && canMin > 0)) {
 
-                    montoTotal = (1325 + (horas * 650));
+                    montoTotal = (1325 + ((horas-2) * 650));
 
                     montoExtra = montoTotal - 1000;
 
@@ -255,7 +255,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 } else if (horas > 2) {
 
-                    montoTotal = 1000 + (horas * 650);
+                    montoTotal = 1000 + ((horas-2) * 650);
 
                     montoExtra = montoTotal - 1000;
 
@@ -269,7 +269,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 if ((horas > 2) && (canMin < 30 && canMin > 0)) {
 
-                    montoTotal = (1400 + (horas * 800));
+                    montoTotal = (1400 + ((horas-2) * 800));
 
                     montoExtra = montoTotal - 1000;
 
@@ -287,7 +287,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 } else if (horas > 2) {
 
-                    montoTotal = 1000 + (horas * 800);
+                    montoTotal = 1000 + ((horas-2) * 800);
 
                     montoExtra = montoTotal - 1000;
 
@@ -301,7 +301,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 if ((horas > 2) && (canMin < 30 && canMin > 0)) {
 
-                    montoTotal = (1275 + (horas * 550));
+                    montoTotal = (1275 + ((horas-2) * 550));
 
                     montoExtra = montoTotal - 1000;
 
@@ -319,7 +319,7 @@ public class facturaSalida extends javax.swing.JFrame {
 
                 } else if (horas > 2) {
 
-                    montoTotal = 1000 + (horas * 550);
+                    montoTotal = 1000 + ((horas-2) * 550);
 
                     montoExtra = montoTotal - 1000;
 
@@ -672,21 +672,18 @@ public class facturaSalida extends javax.swing.JFrame {
 
     private void btnCarlcularHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarlcularHorasActionPerformed
 
-        int minE = Integer.parseInt(txtMEntrada.getText());
+ int minE = Integer.parseInt(txtMEntrada.getText());
         int minS = Integer.parseInt(txtMSalida.getText());
 
         int tm = (minS - minE);
 
-        if (tm > 29) {
+       // int minP = 60 + tm;
 
-            txtCantmin.setText("0");
+                txtCantmin.setText("" + tm);
 
-        } else {
-            txtCantmin.setText("" + tm);
+                CalcularHoras();
 
-            CalcularHoras();
-
-        }
+      
     }//GEN-LAST:event_btnCarlcularHorasActionPerformed
 
     private void CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularActionPerformed
