@@ -220,7 +220,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnrecuperarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnrecuperarMouseClicked
-        envio11 e = new envio11();
+        Correo e = new Correo();
         e.setVisible(true);
     }//GEN-LAST:event_btnrecuperarMouseClicked
 

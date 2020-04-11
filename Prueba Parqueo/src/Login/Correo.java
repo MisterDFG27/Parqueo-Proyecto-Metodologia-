@@ -29,10 +29,10 @@ import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 
 
-public class envio11 extends javax.swing.JFrame {
+public class Correo extends javax.swing.JFrame {
 DefaultTableModel modelo = new DefaultTableModel();
     
-    public envio11() {
+    public Correo() {
         initComponents();
           setLocationRelativeTo(null);
     }
@@ -172,9 +172,9 @@ DefaultTableModel modelo = new DefaultTableModel();
             jcorreo.setVisible(true);
 
         } catch (AddressException ex) {
-            Logger.getLogger(envio11.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Correo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (MessagingException ex) {
-            Logger.getLogger(envio11.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Correo.class.getName()).log(Level.SEVERE, null, ex);
         } 
 
     }//GEN-LAST:event_btnEnviarActionPerformed
@@ -200,21 +200,23 @@ DefaultTableModel modelo = new DefaultTableModel();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(envio11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(envio11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(envio11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(envio11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new envio11().setVisible(true);
+                new Correo().setVisible(true);
             }
         });
     }
