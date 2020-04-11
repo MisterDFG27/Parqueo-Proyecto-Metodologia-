@@ -148,8 +148,8 @@ DefaultTableModel modelo = new DefaultTableModel();
 
             Session session = Session.getDefaultInstance(props);
 
-            String correoRemitente = "dfgtoledo27@outlook.es";
-            String passwordRemitente = "biggy987654321";
+            String correoRemitente = "";
+            String passwordRemitente = "";
             String correoReceptor = txtCorreo.getText();
             String asunto = "Mi primero correo en Java";
             String mensaje = "Su Usuario es: "+txtusu.getText() + "Su Contraseña es: "+txtpass.getText();
