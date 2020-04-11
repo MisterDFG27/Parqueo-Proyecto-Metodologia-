@@ -1,6 +1,6 @@
 package Login;
 
-import Conexion.Conexion1;
+
 import Conexion.datosP;
 import Menu.Menu_Principal;
 
@@ -234,7 +234,7 @@ public class Login extends javax.swing.JFrame {
 
                 //Cargamos el Driver MySQL
                 Class.forName("com.mysql.jdbc.Driver");
-                conect = DriverManager.getConnection("jdbc:mysql://localhost:3308/parqueo", "root", "");
+                conect = DriverManager.getConnection("jdbc:mysql://localhost/parqueo", "root", "");
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error " + e);

@@ -24,7 +24,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.swing.JOptionPane;
-import Conexion.Conexion1;
+
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 
@@ -150,8 +150,8 @@ DefaultTableModel modelo = new DefaultTableModel();
 
             Session session = Session.getDefaultInstance(props);
 
-            String correoRemitente = "";
-            String passwordRemitente = "";
+            String correoRemitente = "parqueoguapiles@gmail.com";
+            String passwordRemitente = "guapiles123";
             String correoReceptor = txtCorreo.getText();
             String asunto = "Mi primero correo en Java";
             String mensaje = "Su Usuario es: "+txtusu.getText() + "Su Contraseña es: "+txtpass.getText();
