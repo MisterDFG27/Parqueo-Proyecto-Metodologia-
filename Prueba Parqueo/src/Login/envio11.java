@@ -1,5 +1,6 @@
 package Login;
 
+
 import com.mysql.jdbc.Connection;
 import com.sun.mail.handlers.multipart_mixed;
 import java.sql.PreparedStatement;
@@ -24,27 +25,82 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.swing.JOptionPane;
 import Conexion.Conexion1;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 
 public class envio11 extends javax.swing.JFrame {
-
+DefaultTableModel modelo = new DefaultTableModel();
     
     public envio11() {
         initComponents();
           setLocationRelativeTo(null);
     }
+    
+    void mostrarusu(String valor) {
+
+        
+        modelo.addColumn("User");
+        modelo.addColumn("Pass");
+        
+        tbusu.setModel(modelo); 
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT nombreUsuario, contraseña FROM `usuario` WHERE email ='"+txtCorreo.getText()+"'";
+
+        }
+        String[] datos = new String[2];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                txtusu.setText(datos[0] = rs.getString(1));
+                txtpass.setText(datos[1] = rs.getString(2));
+
+                modelo.addRow(datos);
+            }
+            tbusu.setModel(modelo);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         btnEnviar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbusu = new javax.swing.JTable();
+        txtpass = new javax.swing.JTextField();
+        txtusu = new javax.swing.JTextField();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Correo:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 31, -1, -1));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 28, 187, -1));
 
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
@@ -52,37 +108,37 @@ public class envio11 extends javax.swing.JFrame {
                 btnEnviarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 27, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btnEnviar)
-                .addGap(56, 56, 56))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEnviar))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
+        tbusu.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tbusu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tbusuKeyPressed(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tbusu);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 230, 60));
+        getContentPane().add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 50, -1));
+        getContentPane().add(txtusu, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 50, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-
-         try {
+          mostrarusu("");
+        
+          try {
          
             Properties props = new Properties();
             props.setProperty("mail.smtp.host", "smtp.gmail.com");
@@ -92,11 +148,11 @@ public class envio11 extends javax.swing.JFrame {
 
             Session session = Session.getDefaultInstance(props);
 
-            String correoRemitente = "dfgtoledo27@outlook.es";
-            String passwordRemitente = "biggy987654321";
+            String correoRemitente = "";
+            String passwordRemitente = "";
             String correoReceptor = txtCorreo.getText();
             String asunto = "Mi primero correo en Java";
-            String mensaje = "ssssssss";
+            String mensaje = "Su Usuario es: "+txtusu.getText() + "Su Contraseña es: "+txtpass.getText();
 
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(correoRemitente));
@@ -119,6 +175,10 @@ public class envio11 extends javax.swing.JFrame {
         } 
 
     }//GEN-LAST:event_btnEnviarActionPerformed
+
+    private void tbusuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbusuKeyPressed
+
+    }//GEN-LAST:event_tbusuKeyPressed
     
     /**
      * @param args the command line arguments
@@ -159,6 +219,14 @@ public class envio11 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnviar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbusu;
     private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtpass;
+    private javax.swing.JTextField txtusu;
     // End of variables declaration//GEN-END:variables
+Conexion.datosP cc = new Conexion.datosP();
+    java.sql.Connection cn = cc.conexion();
 }
