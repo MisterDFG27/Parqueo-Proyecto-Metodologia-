@@ -90,8 +90,18 @@ public class facturaSalida extends javax.swing.JFrame {
 
         int tt = th + tm;
 
-        txtTotHoras.setText("" + tt);
-        txtCantHoras.setText("" + tt);
+        
+        if (tt < 0) {
+
+            int horas1 = 24 +tt;
+            txtTotHoras.setText("" + horas1);
+            txtCantHoras.setText("" + horas1);
+
+        } else {
+            txtTotHoras.setText("" + tt);
+            txtCantHoras.setText("" + tt);
+
+        }
 
     }
 
@@ -421,8 +431,7 @@ public class facturaSalida extends javax.swing.JFrame {
     private void btnCarlcularHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarlcularHorasActionPerformed
 
         txtTotalHoras.setText(txtTotHoras.getText());
-        
-        
+
         CalcularHoras();
         CalcularMontoXHora();
 
