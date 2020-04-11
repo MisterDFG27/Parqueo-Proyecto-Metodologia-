@@ -37,7 +37,7 @@ public class Reporte1 extends javax.swing.JFrame {
         tbcantliv.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT COUNT(*) AS Cantidad FROM registro WHERE fk_tipoVehiculo='1' AND fecha='"+date+"'";
+            sql = "SELECT COUNT(*) AS Cantidad FROM registro WHERE fk_tipoVehiculo='1' AND fecha='"+date+"' and fk_estado ='F'";
 
         }
         String[] datos = new String[1];
@@ -66,7 +66,7 @@ public class Reporte1 extends javax.swing.JFrame {
         tbcantp.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT COUNT(*) AS Cantidad FROM registro WHERE fk_tipoVehiculo='2' AND fecha='"+date+"'";
+            sql = "SELECT COUNT(*) AS Cantidad FROM registro WHERE fk_tipoVehiculo='2' AND fecha='"+date+"' and fk_estado ='F'";
 
         }
         String[] datos = new String[1];
@@ -95,7 +95,7 @@ public class Reporte1 extends javax.swing.JFrame {
         tbcantm.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT COUNT(*) AS Cantidad FROM registro WHERE fk_tipoVehiculo='3' AND fecha='"+date+"'";
+            sql = "SELECT COUNT(*) AS Cantidad FROM registro WHERE fk_tipoVehiculo='3' AND fecha='"+date+"' and fk_estado ='F'";
 
         }
         String[] datos = new String[1];
@@ -124,7 +124,7 @@ public class Reporte1 extends javax.swing.JFrame {
         tbmont1.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql ="SELECT Sum(montototal) From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fecha= '"+date+"' and fk_tipoVehiculo = 1 ";
+            sql ="SELECT Sum(montototal) From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fecha= '"+date+"' and fk_tipoVehiculo = 1 and fk_estado ='F'";
 
 
         }
@@ -155,7 +155,7 @@ public class Reporte1 extends javax.swing.JFrame {
         tbmont2.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql ="SELECT Sum(montototal) From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fecha= '"+date+"' and fk_tipoVehiculo = 2 ";
+            sql ="SELECT Sum(montototal) From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fecha= '"+date+"' and fk_tipoVehiculo = 2 and fk_estado ='F'";
 
 
         }
@@ -186,7 +186,7 @@ public class Reporte1 extends javax.swing.JFrame {
         tbmont3.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql ="SELECT Sum(montototal) From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fecha= '"+date+"' and fk_tipoVehiculo = 3 ";
+            sql ="SELECT Sum(montototal) From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fecha= '"+date+"' and fk_tipoVehiculo = 3 and fk_estado ='F'";
 
 
         }
@@ -284,9 +284,7 @@ public class Reporte1 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JButton();
-        btnreporte = new javax.swing.JButton();
         btnmenu = new javax.swing.JButton();
-        btnsalir4 = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -459,17 +457,7 @@ public class Reporte1 extends javax.swing.JFrame {
                 btnlimpiarActionPerformed(evt);
             }
         });
-        jPanel3.add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, 100, 30));
-
-        btnreporte.setBackground(new java.awt.Color(0, 0, 0));
-        btnreporte.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        btnreporte.setText("Reporte 2");
-        btnreporte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnreporteActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnreporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 660, 100, 30));
+        jPanel3.add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 600, 100, 30));
 
         btnmenu.setText("Menu");
         btnmenu.addActionListener(new java.awt.event.ActionListener() {
@@ -478,16 +466,6 @@ public class Reporte1 extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, -1, 30));
-
-        btnsalir4.setBackground(new java.awt.Color(0, 0, 0));
-        btnsalir4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        btnsalir4.setText("Salir");
-        btnsalir4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsalir4ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnsalir4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 100, 30));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
 
@@ -511,16 +489,6 @@ public class Reporte1 extends javax.swing.JFrame {
     private void btnsalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalir3ActionPerformed
      
     }//GEN-LAST:event_btnsalir3ActionPerformed
-
-    private void btnsalir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalir4ActionPerformed
-        dispose();
-    }//GEN-LAST:event_btnsalir4ActionPerformed
-
-    private void btnreporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreporteActionPerformed
-       Reporte_2 r = new Reporte_2();
-        r.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btnreporteActionPerformed
 
     private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
        
@@ -566,9 +534,7 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btnlimpiar;
     private javax.swing.JButton btnmenu;
-    private javax.swing.JButton btnreporte;
     private javax.swing.JButton btnsalir3;
-    private javax.swing.JButton btnsalir4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
