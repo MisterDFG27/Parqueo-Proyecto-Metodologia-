@@ -471,7 +471,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1.add(BtnSalidaregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, -1));
 
         txtCantHoras.setEnabled(false);
-        jPanel1.add(txtCantHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 340, 70, -1));
+        jPanel1.add(txtCantHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 340, 70, -1));
 
         txtMT.setEnabled(false);
         jPanel1.add(txtMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 380, 100, -1));
@@ -500,7 +500,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 380, -1, -1));
 
         jLabel4.setText("Horas a pagar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 320, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 320, -1, -1));
 
         jLabel20.setText("Entrada:");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, -1, -1));
@@ -546,7 +546,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 60, -1, -1));
 
         jLabel26.setText("Minutos excedido");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, -1, -1));
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 320, -1, -1));
 
         txtCantmin.setEnabled(false);
         txtCantmin.addActionListener(new java.awt.event.ActionListener() {
@@ -554,7 +554,7 @@ public class facturaSalida extends javax.swing.JFrame {
                 txtCantminActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCantmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 340, 70, -1));
+        jPanel1.add(txtCantmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 340, 70, -1));
 
         jLabel7.setText("Monto:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
