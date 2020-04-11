@@ -81,7 +81,7 @@ DefaultTableModel modelo = new DefaultTableModel();
         jLabel1 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         btnEnviar = new javax.swing.JButton();
-        jcorreo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,8 +118,8 @@ DefaultTableModel modelo = new DefaultTableModel();
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Correo:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 31, -1, -1));
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 28, 187, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 187, -1));
 
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,12 +127,15 @@ DefaultTableModel modelo = new DefaultTableModel();
                 btnEnviarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 27, -1, -1));
+        getContentPane().add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, -1));
 
-        jcorreo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jcorreo.setForeground(new java.awt.Color(51, 255, 0));
-        jcorreo.setText("Correo enviado exitosamente. Porfavor revise cu correo electronico");
-        getContentPane().add(jcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,7 +157,7 @@ DefaultTableModel modelo = new DefaultTableModel();
             String passwordRemitente = "guapiles123";
             String correoReceptor = txtCorreo.getText();
             String asunto = "Mi primero correo en Java";
-            String mensaje = "Su Usuario es: "+txtusu.getText() + "Su Contraseña es: "+txtpass.getText();
+            String mensaje = "Su Usuario es: "+txtusu.getText() + "  Su Contraseña es: "+txtpass.getText();
 
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(correoRemitente));
@@ -169,7 +172,7 @@ DefaultTableModel modelo = new DefaultTableModel();
             t.close();
 
             JOptionPane.showMessageDialog(null, "Correo Electronico Enviado");
-            jcorreo.setVisible(true);
+            
 
         } catch (AddressException ex) {
             Logger.getLogger(Correo.class.getName()).log(Level.SEVERE, null, ex);
@@ -182,6 +185,12 @@ DefaultTableModel modelo = new DefaultTableModel();
     private void tbusuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbusuKeyPressed
 
     }//GEN-LAST:event_tbusuKeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       Login l = new Login();
+       l.setVisible(true);
+       System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -223,11 +232,11 @@ DefaultTableModel modelo = new DefaultTableModel();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnviar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel jcorreo;
     private javax.swing.JTable tbusu;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtpass;

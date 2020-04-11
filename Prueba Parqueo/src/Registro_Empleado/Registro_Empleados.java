@@ -58,11 +58,14 @@ public class Registro_Empleados extends javax.swing.JFrame {
         lblRequeridoUsuario = new javax.swing.JLabel();
         lblRequeridoContraseña = new javax.swing.JLabel();
         lblRequeridoAP2 = new javax.swing.JLabel();
+        jcontra = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -116,6 +119,8 @@ public class Registro_Empleados extends javax.swing.JFrame {
 
         jLabel11.setText("Contraseña");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
+
+        txtContraseña.setFont(new java.awt.Font("Bookshelf Symbol 7", 0, 11)); // NOI18N
         jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 103, -1));
 
         jLabel12.setText("Tipo de usuario");
@@ -136,26 +141,42 @@ public class Registro_Empleados extends javax.swing.JFrame {
         jLabel13.setText("Datos Personales");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
+        lblRequeridoCedula.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoCedula.setText("Requerido");
         jPanel1.add(lblRequeridoCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
 
+        lblRequeridoNombre.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoNombre.setText("Requerido");
         jPanel1.add(lblRequeridoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
 
+        lblRequeridoAP1.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoAP1.setText("Requerido");
         jPanel1.add(lblRequeridoAP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
+        lblRequeridoCE.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoCE.setText("Requerido");
         jPanel1.add(lblRequeridoCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, -1, -1));
 
+        lblRequeridoUsuario.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoUsuario.setText("Requerido");
         jPanel1.add(lblRequeridoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, -1, -1));
 
+        lblRequeridoContraseña.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoContraseña.setText("Requerido");
-        jPanel1.add(lblRequeridoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, -1, -1));
+        jPanel1.add(lblRequeridoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 270, -1, -1));
 
+        lblRequeridoAP2.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoAP2.setText("Requerido");
         jPanel1.add(lblRequeridoAP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+        jPanel1.add(jcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 110, 20));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 30, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 630));
 
@@ -269,6 +290,10 @@ public class Registro_Empleados extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnmenuActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       jcontra.setText(txtContraseña.getText());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -305,6 +330,7 @@ public class Registro_Empleados extends javax.swing.JFrame {
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnmenu;
     private javax.swing.JComboBox cmbTipoUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -319,6 +345,7 @@ public class Registro_Empleados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jcontra;
     private javax.swing.JLabel lblRequeridoAP1;
     private javax.swing.JLabel lblRequeridoAP2;
     private javax.swing.JLabel lblRequeridoCE;
