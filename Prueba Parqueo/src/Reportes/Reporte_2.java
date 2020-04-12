@@ -314,6 +314,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         btnFiltrar = new javax.swing.JLabel();
         btnFitrar2Fechas = new javax.swing.JLabel();
         btnMenu = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -352,8 +353,10 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbmontoT);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 170, 50));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 170, 50));
 
+        txtVerAll.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtVerAll.setForeground(new java.awt.Color(255, 255, 0));
         txtVerAll.setText("Ver todos los registros facturados");
         txtVerAll.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -362,13 +365,15 @@ public class Reporte_2 extends javax.swing.JFrame {
         });
         jPanel1.add(txtVerAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, -1, -1));
 
+        btnTotalR.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnTotalR.setForeground(new java.awt.Color(255, 255, 0));
         btnTotalR.setText("Monto total registrado");
         btnTotalR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTotalRMouseClicked(evt);
             }
         });
-        jPanel1.add(btnTotalR, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
+        jPanel1.add(btnTotalR, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
 
         tbMontoR.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -383,8 +388,10 @@ public class Reporte_2 extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbMontoR);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 170, 50));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 170, 50));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Placa");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
         jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 120, 30));
@@ -398,38 +405,52 @@ public class Reporte_2 extends javax.swing.JFrame {
         });
         jPanel1.add(btnPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 0));
         jLabel10.setText("Monto de consulta");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 0));
         jLabel11.setText("Reporte específico ");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, 50));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("Consultas");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Tipo de vehículo");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, -1, -1));
 
         cmbTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
         jPanel1.add(cmbTipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 50, -1));
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Liviano");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 190, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Pesado");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setText("Moto");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 230, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 0));
         jLabel9.setText("Fecha Inicial");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 300, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setText("Fecha Final");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, -1, -1));
         jPanel1.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, -1, -1));
@@ -437,6 +458,8 @@ public class Reporte_2 extends javax.swing.JFrame {
         txtFecha2.setEnabled(false);
         jPanel1.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 340, -1, -1));
 
+        btnFiltrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnFiltrar.setForeground(new java.awt.Color(255, 255, 0));
         btnFiltrar.setText("Filtrar por 1 fecha");
         btnFiltrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -445,6 +468,8 @@ public class Reporte_2 extends javax.swing.JFrame {
         });
         jPanel1.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, -1, -1));
 
+        btnFitrar2Fechas.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnFitrar2Fechas.setForeground(new java.awt.Color(255, 255, 0));
         btnFitrar2Fechas.setText("Filtrar por 2 fechas");
         btnFitrar2Fechas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -461,15 +486,18 @@ public class Reporte_2 extends javax.swing.JFrame {
         });
         jPanel1.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, -1, -1));
 
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\monge\\Downloads\\Parqueo-Proyecto-Metodologia-\\Prueba Parqueo\\src\\img\\Parqueo5.jpg")); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 630));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -601,6 +629,7 @@ public class Reporte_2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

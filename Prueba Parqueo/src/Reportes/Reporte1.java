@@ -285,6 +285,7 @@ public class Reporte1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JButton();
         btnmenu = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -293,10 +294,12 @@ public class Reporte1 extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("            Reporte General Parqueo Guapileño S.A.");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 630, 42));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Fecha");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 70, -1));
 
@@ -321,14 +324,17 @@ public class Reporte1 extends javax.swing.JFrame {
         getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 120, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("Vehiculo Pesado:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, 20));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Vehiculo Liviano:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 140, 20));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 0));
         jLabel9.setText("Tipo vehiculo");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 130, 20));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 430, 10));
@@ -434,6 +440,7 @@ public class Reporte1 extends javax.swing.JFrame {
         getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, 100, 50));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setText("Cierre de caja");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 610, -1, -1));
 
@@ -446,6 +453,7 @@ public class Reporte1 extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("Motocicletas:");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, 110, 20));
 
@@ -466,6 +474,9 @@ public class Reporte1 extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, -1, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\monge\\Downloads\\Parqueo-Proyecto-Metodologia-\\Prueba Parqueo\\src\\img\\Parqueo2.jpg")); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 700));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
 
@@ -536,6 +547,7 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnsalir3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

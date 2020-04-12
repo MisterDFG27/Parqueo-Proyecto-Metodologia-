@@ -208,6 +208,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         tbcantliv = new javax.swing.JTable();
         btnActualizar = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         EmpleadoR = new javax.swing.JMenu();
         Vehiculo = new javax.swing.JMenu();
@@ -235,7 +236,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbTotal);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 249, 140));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 249, 140));
 
         tbUsuarioID.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbUsuarioID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -252,13 +253,17 @@ public class Menu_Principal extends javax.swing.JFrame {
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 249, 60));
 
         txtCantiTotal.setEnabled(false);
-        jPanel1.add(txtCantiTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 202, 130, 30));
+        jPanel1.add(txtCantiTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 130, 30));
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Total de vehículos en el momento");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("Usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, -1, -1));
 
         txtIDparametro.setEnabled(false);
         jPanel1.add(txtIDparametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 160, -1));
@@ -275,13 +280,17 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbcantm);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, 90, 51));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 90, 51));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("Motos");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Pesados");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
 
         tbcantp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbcantp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -295,10 +304,12 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbcantp);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 90, 50));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 90, 50));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Livianos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         tbcantliv.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbcantliv.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -312,15 +323,20 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(tbcantliv);
 
-        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 90, 50));
+        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 90, 50));
 
+        btnActualizar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(255, 255, 0));
         btnActualizar.setText("Actualizar");
         btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnActualizarMouseClicked(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, -1, -1));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\monge\\Downloads\\Parqueo-Proyecto-Metodologia-\\Prueba Parqueo\\src\\img\\Parqueo3 (1).jpg")); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
 
@@ -500,6 +516,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;

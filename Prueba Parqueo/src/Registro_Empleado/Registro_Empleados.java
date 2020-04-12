@@ -59,6 +59,7 @@ public class Registro_Empleados extends javax.swing.JFrame {
         lblRequeridoAP2 = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JPasswordField();
         chVerContra = new javax.swing.JCheckBox();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,10 +68,14 @@ public class Registro_Empleados extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Registro de Empleados");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
 
+        btnguardar.setBackground(new java.awt.Color(0, 0, 0));
+        btnguardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnguardar.setForeground(new java.awt.Color(255, 255, 0));
         btnguardar.setText("Guardar");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +84,9 @@ public class Registro_Empleados extends javax.swing.JFrame {
         });
         jPanel1.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 180, 30));
 
+        btnmenu.setBackground(new java.awt.Color(0, 0, 0));
+        btnmenu.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnmenu.setForeground(new java.awt.Color(255, 255, 0));
         btnmenu.setText("Menu");
         btnmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,79 +96,106 @@ public class Registro_Empleados extends javax.swing.JFrame {
         jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 577, -1, -1));
         jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 145, -1));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Nombre:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("Cédula");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
         jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 145, -1));
         jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 141, -1));
 
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setText("Primer Apellido");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
         jPanel1.add(txtPrimerP, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 145, -1));
 
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Correo electrónico");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setText("Segundo Apellido");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
         jPanel1.add(txtSegundoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 145, -1));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 0));
         jLabel9.setText("Datos de Usuario");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 0));
         jLabel10.setText("Usuario");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, -1, -1));
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 103, -1));
 
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 0));
         jLabel11.setText("Contraseña");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 0));
         jLabel12.setText("Tipo de usuario");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, -1, -1));
 
         cmbTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
         jPanel1.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 103, -1));
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Administración");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("Empleado");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 0));
         jLabel13.setText("Datos Personales");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
+        lblRequeridoCedula.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRequeridoCedula.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoCedula.setText("Requerido");
         jPanel1.add(lblRequeridoCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
 
+        lblRequeridoNombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRequeridoNombre.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoNombre.setText("Requerido");
         jPanel1.add(lblRequeridoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
 
+        lblRequeridoAP1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRequeridoAP1.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoAP1.setText("Requerido");
         jPanel1.add(lblRequeridoAP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
+        lblRequeridoCE.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRequeridoCE.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoCE.setText("Requerido");
         jPanel1.add(lblRequeridoCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, -1, -1));
 
+        lblRequeridoUsuario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRequeridoUsuario.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoUsuario.setText("Requerido");
         jPanel1.add(lblRequeridoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, -1, -1));
 
+        lblRequeridoContraseña.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRequeridoContraseña.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoContraseña.setText("Requerido");
         jPanel1.add(lblRequeridoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, -1, -1));
 
+        lblRequeridoAP2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRequeridoAP2.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoAP2.setText("Requerido");
         jPanel1.add(lblRequeridoAP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
@@ -173,6 +208,9 @@ public class Registro_Empleados extends javax.swing.JFrame {
             }
         });
         jPanel1.add(chVerContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 130, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\monge\\Downloads\\Parqueo-Proyecto-Metodologia-\\Prueba Parqueo\\src\\img\\Parqueo.jpg")); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 630));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 630));
 
@@ -335,6 +373,7 @@ public class Registro_Empleados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
