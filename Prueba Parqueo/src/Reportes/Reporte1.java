@@ -257,7 +257,6 @@ public class Reporte1 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnsalir3 = new javax.swing.JButton();
         btnbuscar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -302,16 +301,6 @@ public class Reporte1 extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Fecha");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 70, -1));
-
-        btnsalir3.setBackground(new java.awt.Color(0, 0, 0));
-        btnsalir3.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        btnsalir3.setText("Facturar");
-        btnsalir3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsalir3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnsalir3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
         btnbuscar.setBackground(new java.awt.Color(0, 0, 0));
         btnbuscar.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -497,10 +486,6 @@ public class Reporte1 extends javax.swing.JFrame {
       limpiartabla();
     }//GEN-LAST:event_btnlimpiarActionPerformed
 
-    private void btnsalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalir3ActionPerformed
-     
-    }//GEN-LAST:event_btnsalir3ActionPerformed
-
     private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
        
         dispose();
@@ -545,7 +530,6 @@ public class Reporte1 extends javax.swing.JFrame {
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btnlimpiar;
     private javax.swing.JButton btnmenu;
-    private javax.swing.JButton btnsalir3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

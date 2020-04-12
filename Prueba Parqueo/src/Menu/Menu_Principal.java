@@ -1,7 +1,7 @@
 package Menu;
 
 import Conexion.datosP;
-import Registro_Vehiculos.facturaSalida;
+import Registro_Vehiculos.facturaSalida1;
 import Reportes.Reporte1;
 import Reportes.Reporte_2;
 import java.sql.Connection;
@@ -433,7 +433,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_VehiculoMouseClicked
 
     private void FacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaMouseClicked
-        facturaSalida m = new facturaSalida();
+        facturaSalida1 m = new facturaSalida1();
         m.setVisible(true);
     }//GEN-LAST:event_FacturaMouseClicked
 

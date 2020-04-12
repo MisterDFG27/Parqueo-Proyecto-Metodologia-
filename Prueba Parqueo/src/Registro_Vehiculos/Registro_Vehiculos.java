@@ -97,7 +97,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Número Placa");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-        jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 120, -1));
+        jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 120, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 0));
@@ -108,10 +108,10 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Hora de entrada");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
-        jPanel1.add(txtHoraEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 120, -1));
+        jPanel1.add(txtHoraEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 120, -1));
 
         cmbTipoV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
-        jPanel1.add(cmbTipoV, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 120, -1));
+        jPanel1.add(cmbTipoV, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 120, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 0));
@@ -121,17 +121,17 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setText("Pesado");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 0));
         jLabel9.setText("Moto");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 0));
         jLabel10.setText("Liviano");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
 
         txtmenu.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtmenu.setText("Menu");
@@ -145,11 +145,11 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 0));
         jLabel11.setText("Estado");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
 
         txtEstado.setText("D");
         txtEstado.setEnabled(false);
-        jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 120, -1));
+        jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 120, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 0));
@@ -225,7 +225,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 0));
         jLabel13.setText("Usuario");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, -1, -1));
-        jPanel1.add(txtFechaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 120, -1));
+        jPanel1.add(txtFechaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 120, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\monge\\Downloads\\Parqueo-Proyecto-Metodologia-\\Prueba Parqueo\\src\\img\\Parqueo3 (4).jpg")); // NOI18N
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 580));
