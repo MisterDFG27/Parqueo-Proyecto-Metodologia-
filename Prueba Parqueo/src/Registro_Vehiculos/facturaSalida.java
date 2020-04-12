@@ -41,8 +41,8 @@ public class facturaSalida extends javax.swing.JFrame {
         modelo.addColumn("Placa");
         modelo.addColumn("Fecha");
         modelo.addColumn("Hora Entrada");
-        modelo.addColumn("Tipo de vehiculo");
         modelo.addColumn("Hora Salida");
+        modelo.addColumn("Tipo de vehículo");
         modelo.addColumn("Estado");
 
         tbFactura.setModel(modelo);
@@ -63,8 +63,8 @@ public class facturaSalida extends javax.swing.JFrame {
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
-                datos[4] = rs.getString(5);
-                datos[5] = rs.getString(6);
+                datos[4] = rs.getString(6);
+                datos[5] = rs.getString(5);
                 datos[6] = rs.getString(7);
 
                 modelo.addRow(datos);
@@ -377,7 +377,6 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnBuscarRegistro = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -426,6 +425,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         txtIDregistro = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -438,7 +438,7 @@ public class facturaSalida extends javax.swing.JFrame {
         });
         getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
-        jLabel2.setText("Numero de Placa:");
+        jLabel2.setText("Número de Placa:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, -1, -1));
         getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 80, -1));
 
@@ -456,14 +456,11 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel12.setText("Buscar el vehiculo");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
 
-        jLabel18.setText("Calcular montos");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, -1, -1));
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setText("Salida del vehiculo");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 276, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, -1, -1));
 
         jLabel19.setText("ID registro");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
@@ -516,13 +513,13 @@ public class facturaSalida extends javax.swing.JFrame {
         txtTP.setEnabled(false);
         jPanel1.add(txtTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 460, 100, -1));
 
-        Calcular.setText("Calcular");
+        Calcular.setText("Calcular Montos");
         Calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 500, -1, -1));
+        jPanel1.add(Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 500, -1, -1));
 
         jLabel17.setText("Total a pagar");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, -1, -1));
@@ -547,7 +544,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel22.setText(":");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 10, -1));
 
-        jLabel23.setText("Calcular Horas");
+        jLabel23.setText("Horas de inicio y final");
         jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, -1, -1));
         jPanel1.add(txtHSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, 40, -1));
         jPanel1.add(txtMSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 550, 40, -1));
@@ -555,7 +552,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel24.setText(":");
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 550, 10, -1));
 
-        btnCarlcularHoras.setText("Calcular");
+        btnCarlcularHoras.setText("Calcular horas ");
         btnCarlcularHoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCarlcularHorasActionPerformed(evt);
@@ -579,8 +576,8 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1.add(txtTotHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 520, 70, -1));
         jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 60, -1, -1));
 
-        jLabel26.setText("Minutos excedido");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 320, -1, -1));
+        jLabel26.setText("Minutos excedidos");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 320, -1, -1));
 
         txtCantmin.setEnabled(false);
         txtCantmin.addActionListener(new java.awt.event.ActionListener() {
@@ -616,6 +613,9 @@ public class facturaSalida extends javax.swing.JFrame {
 
         jLabel11.setText("Guardar el pago");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
+
+        jLabel18.setText("Calcular montos");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 220, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 600));
 
