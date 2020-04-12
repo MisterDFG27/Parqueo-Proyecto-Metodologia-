@@ -223,6 +223,7 @@ public class Login extends javax.swing.JFrame {
     private void btnrecuperarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnrecuperarMouseClicked
         Correo e = new Correo();
         e.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnrecuperarMouseClicked
 
     public class conectar {

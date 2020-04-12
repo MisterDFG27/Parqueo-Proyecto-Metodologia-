@@ -200,7 +200,7 @@ DefaultTableModel modelo = new DefaultTableModel();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        Login l = new Login();
        l.setVisible(true);
-       System.exit(0);
+      dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
