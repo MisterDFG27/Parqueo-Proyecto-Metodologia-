@@ -167,8 +167,8 @@ DefaultTableModel modelo = new DefaultTableModel();
             String correoRemitente = "parqueoguapiles@gmail.com";
             String passwordRemitente = "guapiles123";
             String correoReceptor = txtCorreo.getText();
-            String asunto = "Mi primero correo en Java";
-            String mensaje = "Su Usuario es: "+txtusu.getText() + "  Su Contraseña es: "+txtpass.getText();
+            String asunto = "Recuperación de usuario y contraseña";
+            String mensaje = "Su Usuario es: "+txtusu.getText() + "  // Su Contraseña es: "+txtpass.getText();
 
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(correoRemitente));
@@ -214,7 +214,7 @@ DefaultTableModel modelo = new DefaultTableModel();
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
