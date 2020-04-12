@@ -45,7 +45,6 @@ public class Registro_Empleados extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtContraseña = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         cmbTipoUsuario = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
@@ -58,8 +57,8 @@ public class Registro_Empleados extends javax.swing.JFrame {
         lblRequeridoUsuario = new javax.swing.JLabel();
         lblRequeridoContraseña = new javax.swing.JLabel();
         lblRequeridoAP2 = new javax.swing.JLabel();
-        jcontra = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        txtContraseña = new javax.swing.JPasswordField();
+        chVerContra = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,20 +119,17 @@ public class Registro_Empleados extends javax.swing.JFrame {
         jLabel11.setText("Contraseña");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
 
-        txtContraseña.setFont(new java.awt.Font("Bookshelf Symbol 7", 0, 11)); // NOI18N
-        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 103, -1));
-
         jLabel12.setText("Tipo de usuario");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
 
         cmbTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
-        jPanel1.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 103, -1));
+        jPanel1.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 103, -1));
 
         jLabel4.setText("Administración");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, -1));
 
         jLabel5.setText("Empleado");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(153, 153, 153));
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -159,24 +155,24 @@ public class Registro_Empleados extends javax.swing.JFrame {
 
         lblRequeridoUsuario.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoUsuario.setText("Requerido");
-        jPanel1.add(lblRequeridoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, -1, -1));
+        jPanel1.add(lblRequeridoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, -1, -1));
 
         lblRequeridoContraseña.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoContraseña.setText("Requerido");
-        jPanel1.add(lblRequeridoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 270, -1, -1));
+        jPanel1.add(lblRequeridoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, -1, -1));
 
         lblRequeridoAP2.setForeground(new java.awt.Color(255, 0, 0));
         lblRequeridoAP2.setText("Requerido");
         jPanel1.add(lblRequeridoAP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
-        jPanel1.add(jcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 110, 20));
+        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 100, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        chVerContra.setText("Ver contraseña");
+        chVerContra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                chVerContraActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 30, -1));
+        jPanel1.add(chVerContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 130, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 630));
 
@@ -243,9 +239,6 @@ public class Registro_Empleados extends javax.swing.JFrame {
 
         }
 
-       
-        
-        
         if (cont == 0) {
 
             try {
@@ -276,12 +269,11 @@ public class Registro_Empleados extends javax.swing.JFrame {
             txtPrimerP.setText("");
             txtSegundoP.setText("");
             txtEmail.setText("");
-             JOptionPane.showMessageDialog(this, "Guardado con exito");
+            JOptionPane.showMessageDialog(this, "Guardado con exito");
 
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_btnguardarActionPerformed
 
 
@@ -290,9 +282,16 @@ public class Registro_Empleados extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnmenuActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       jcontra.setText(txtContraseña.getText());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void chVerContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chVerContraActionPerformed
+
+        if (chVerContra.isSelected()) {
+            txtContraseña.setEchoChar((char) 0);
+        } else {
+            txtContraseña.setEchoChar('*');
+        }
+
+
+    }//GEN-LAST:event_chVerContraActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -329,8 +328,8 @@ public class Registro_Empleados extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnmenu;
+    private javax.swing.JCheckBox chVerContra;
     private javax.swing.JComboBox cmbTipoUsuario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -345,7 +344,6 @@ public class Registro_Empleados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jcontra;
     private javax.swing.JLabel lblRequeridoAP1;
     private javax.swing.JLabel lblRequeridoAP2;
     private javax.swing.JLabel lblRequeridoCE;
@@ -353,7 +351,7 @@ public class Registro_Empleados extends javax.swing.JFrame {
     private javax.swing.JLabel lblRequeridoContraseña;
     private javax.swing.JLabel lblRequeridoNombre;
     private javax.swing.JLabel lblRequeridoUsuario;
-    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtPrimerP;
     private javax.swing.JTextField txtSegundoP;

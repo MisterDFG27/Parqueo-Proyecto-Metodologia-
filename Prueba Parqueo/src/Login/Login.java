@@ -154,8 +154,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btnrecuperar.setForeground(new java.awt.Color(255, 0, 0));
-        btnrecuperar.setText("Recuperacion de contraseña");
+        btnrecuperar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnrecuperar.setForeground(new java.awt.Color(0, 153, 153));
+        btnrecuperar.setText("Recuperación de contraseña");
         btnrecuperar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnrecuperarMouseClicked(evt);
@@ -199,7 +200,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(PwClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addComponent(btnrecuperar)
                 .addContainerGap())
         );
