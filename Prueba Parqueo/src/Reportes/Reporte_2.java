@@ -17,11 +17,12 @@ public class Reporte_2 extends javax.swing.JFrame {
     public Reporte_2() {
         initComponents();
         setLocationRelativeTo(null);
+    
     }
 
     public void processCalendar() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                                                          //yyyy-MM-dd
+        //yyyy-MM-dd
         date = dateFormat.format(txtFecha1.getDate());
 
     }
@@ -35,19 +36,20 @@ public class Reporte_2 extends javax.swing.JFrame {
     void mostrardatos(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Numero Placa");
+        modelo.addColumn("Número Placa");
         modelo.addColumn("Hora entrada");
         modelo.addColumn("Hora salida");
         modelo.addColumn("Monto Total");
+        modelo.addColumn("Tipo de vehículo");
 
         tbDatos.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "SELECT númeroPlaca , horaEntrada , horaSalida, montoTotal "
+            sql = "SELECT númeroPlaca , horaEntrada , horaSalida, montoTotal, fk_tipoVehiculo "
                     + "FROM registro a INNER JOIN factura b on b.fk_registro = a.id_registo";
 
         }
-        String[] datos = new String[4];
+        String[] datos = new String[5];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -57,6 +59,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
 
                 modelo.addRow(datos);
             }
@@ -70,10 +73,11 @@ public class Reporte_2 extends javax.swing.JFrame {
     void mostrarFiltro(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Numero Placa");
+        modelo.addColumn("Número Placa");
         modelo.addColumn("Hora entrada");
         modelo.addColumn("Hora salida");
         modelo.addColumn("Monto total");
+        modelo.addColumn("Tipo de vehículo");
 
         tbDatos.setModel(modelo);
         processCalendar();
@@ -81,13 +85,13 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         if (valor.equals("")) {
 
-            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal "
+            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal, fk_tipoVehiculo "
                     + "From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
                     + " AND fecha='" + date + "'";
 
         }
 
-        String[] datos = new String[4];
+        String[] datos = new String[5];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -97,6 +101,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
 
                 modelo.addRow(datos);
             }
@@ -110,10 +115,11 @@ public class Reporte_2 extends javax.swing.JFrame {
     void mostrarFiltro2Fechas(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Numero Placa");
+        modelo.addColumn("Número Placa");
         modelo.addColumn("Hora entrada");
         modelo.addColumn("Hora salida");
         modelo.addColumn("Monto total");
+        modelo.addColumn("Tipo de vehículo");
 
         tbDatos.setModel(modelo);
         processCalendar();
@@ -122,13 +128,13 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         if (valor.equals("")) {
 
-            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal "
+            sql = "Select númeroPlaca , horaEntrada , horaSalida, montoTotal, fk_tipoVehiculo "
                     + "From registro a INNER JOIN factura b on b.fk_registro = a.id_registo where fk_tipoVehiculo= " + cmbTipoVehiculo.getSelectedItem()
                     + " AND fecha between'" + date + "' and '" + date2 + "'  ";
 
         }
 
-        String[] datos = new String[4];
+        String[] datos = new String[5];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -138,6 +144,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
 
                 modelo.addRow(datos);
             }
@@ -246,22 +253,23 @@ public class Reporte_2 extends javax.swing.JFrame {
     void mostrarDatosPorPlaca(String valor) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Numero Placa");
+        modelo.addColumn("Número Placa");
         modelo.addColumn("Hora entrada");
         modelo.addColumn("Hora salida");
         modelo.addColumn("Fecha");
         modelo.addColumn("Monto total");
+        modelo.addColumn("Tipo de vehículo");
 
         tbDatos.setModel(modelo);
         String sql = "";
         if (valor.equals("")) {
-            sql = "Select númeroPlaca , horaEntrada , horaSalida, fecha, montoTotal "
+            sql = "Select númeroPlaca , horaEntrada , horaSalida, fecha, montoTotal, fk_tipoVehiculo "
                     + "From registro a INNER JOIN factura b  on b.fk_registro = a.id_registo "
                     + "where númeroPlaca ='" + txtPlaca.getText() + "'";
 
         }
 
-        String[] datos = new String[5];
+        String[] datos = new String[6];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -272,6 +280,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 datos[2] = rs.getString(3);
                 datos[3] = rs.getString(4);
                 datos[4] = rs.getString(5);
+                datos[5] = rs.getString(6);
 
                 modelo.addRow(datos);
             }
@@ -313,7 +322,8 @@ public class Reporte_2 extends javax.swing.JFrame {
         txtFecha2 = new com.toedter.calendar.JDateChooser();
         btnFiltrar = new javax.swing.JLabel();
         btnFitrar2Fechas = new javax.swing.JLabel();
-        btnMenu = new javax.swing.JButton();
+        btnmenu1 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -337,7 +347,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         tbDatos.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tbDatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 610, 310));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 630, 310));
 
         tbmontoT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -371,7 +381,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 btnTotalRMouseClicked(evt);
             }
         });
-        jPanel1.add(btnTotalR, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, -1, -1));
+        jPanel1.add(btnTotalR, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, -1, -1));
 
         tbMontoR.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -416,7 +426,6 @@ public class Reporte_2 extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 153));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Tipo de vehículo");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, -1, -1));
 
@@ -455,7 +464,7 @@ public class Reporte_2 extends javax.swing.JFrame {
                 btnFiltrarMouseClicked(evt);
             }
         });
-        jPanel1.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, -1, -1));
+        jPanel1.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 420, -1, -1));
 
         btnFitrar2Fechas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnFitrar2Fechas.setForeground(new java.awt.Color(0, 153, 153));
@@ -465,15 +474,23 @@ public class Reporte_2 extends javax.swing.JFrame {
                 btnFitrar2FechasMouseClicked(evt);
             }
         });
-        jPanel1.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 460, -1, 20));
+        jPanel1.add(btnFitrar2Fechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 460, -1, 20));
 
-        btnMenu.setText("Menu");
-        btnMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMenuActionPerformed(evt);
+        btnmenu1.setBackground(new java.awt.Color(0, 153, 153));
+        btnmenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnmenu1MouseClicked(evt);
             }
         });
-        jPanel1.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, -1, -1));
+        btnmenu1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel28.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Menú");
+        btnmenu1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 20));
+
+        jPanel1.add(btnmenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -483,7 +500,7 @@ public class Reporte_2 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -550,7 +567,6 @@ public class Reporte_2 extends javax.swing.JFrame {
     private void btnFitrar2FechasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFitrar2FechasMouseClicked
 
         try {
-      
 
             txtFecha2.setEnabled(true);
             mostrarFiltro2Fechas("");
@@ -568,10 +584,9 @@ public class Reporte_2 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnFitrar2FechasMouseClicked
 
-    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-       
+    private void btnmenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnmenu1MouseClicked
         dispose();
-    }//GEN-LAST:event_btnMenuActionPerformed
+    }//GEN-LAST:event_btnmenu1MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -609,14 +624,15 @@ public class Reporte_2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnFiltrar;
     private javax.swing.JLabel btnFitrar2Fechas;
-    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnPlaca;
     private javax.swing.JLabel btnTotalR;
+    private javax.swing.JPanel btnmenu1;
     private javax.swing.JComboBox cmbTipoVehiculo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

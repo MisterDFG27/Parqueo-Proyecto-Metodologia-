@@ -35,6 +35,7 @@ DefaultTableModel modelo = new DefaultTableModel();
     public Correo() {
         initComponents();
           setLocationRelativeTo(null);
+         
     }
     
     void mostrarusu(String valor) {
@@ -122,6 +123,7 @@ DefaultTableModel modelo = new DefaultTableModel();
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnEnviar.setBackground(new java.awt.Color(0, 153, 153));
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +132,7 @@ DefaultTableModel modelo = new DefaultTableModel();
         });
         jPanel1.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setText("Volver");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

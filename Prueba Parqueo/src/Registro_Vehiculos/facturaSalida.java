@@ -25,6 +25,7 @@ public class facturaSalida extends javax.swing.JFrame {
     public facturaSalida() {
         initComponents();
         setLocationRelativeTo(null);
+       
     }
 
     public void processCalendar() {
@@ -50,7 +51,7 @@ public class facturaSalida extends javax.swing.JFrame {
         String sql = "";
         if (valor.equals("")) {
             sql = "SELECT id_registo, númeroPlaca, fecha, horaEntrada, fk_tipoVehiculo, horaSalida, fk_estado FROM registro "
-                    + "WHERE númeroPlaca ='"+txtPlaca.getText()+"' and fecha = '" + fechacalendario + "'";
+                    + "WHERE númeroPlaca ='" + txtPlaca.getText() + "' and fecha = '" + fechacalendario + "'";
 
         }
         String[] datos = new String[7];
@@ -479,7 +480,6 @@ public class facturaSalida extends javax.swing.JFrame {
         txtFecha = new com.toedter.calendar.JDateChooser();
         jLabel6 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        btnMenu = new javax.swing.JButton();
         btnBuscarRegistro = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtPlaca = new javax.swing.JTextField();
@@ -527,10 +527,15 @@ public class facturaSalida extends javax.swing.JFrame {
         txtCantHoras = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        cbHorario = new javax.swing.JComboBox<>();
+        cbHorario = new javax.swing.JComboBox<String>();
         jLabel3 = new javax.swing.JLabel();
         cbVehiculos = new javax.swing.JComboBox();
         jLabel18 = new javax.swing.JLabel();
+        btnmenu = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -556,20 +561,12 @@ public class facturaSalida extends javax.swing.JFrame {
         jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 120, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel6.setText("Desde 8 o más horas:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 70, -1, -1));
+        jLabel6.setText("Desde 8 o más horas precio especial");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, -1, -1));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel27.setText("Liviano: 550, Pesado: 650, Motos: 450 ");
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, -1, -1));
-
-        btnMenu.setText("Menú");
-        btnMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMenuActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, -1, -1));
 
         btnBuscarRegistro.setText("Buscar");
         btnBuscarRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -620,7 +617,7 @@ public class facturaSalida extends javax.swing.JFrame {
                 BtnSalidaregistroActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnSalidaregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 110, 30));
+        jPanel1.add(BtnSalidaregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 110, -1));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel23.setText("Calcular horas a pagar");
@@ -754,12 +751,12 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel25.setText("Horario");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, -1));
 
-        cbHorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diurno", "Nocturno", "Especial" }));
+        cbHorario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Diurno", "Nocturno", "Especial" }));
         jPanel1.add(cbHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Tipo Vehiculo");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, -1, -1));
 
         cbVehiculos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
         jPanel1.add(cbVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 340, 100, -1));
@@ -767,6 +764,31 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel18.setText("Calcular montos ");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, -1, -1));
+
+        btnmenu.setBackground(new java.awt.Color(0, 153, 153));
+        btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnmenuMouseClicked(evt);
+            }
+        });
+        btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel28.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Menú");
+        btnmenu.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 20));
+
+        jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, 90, 40));
+
+        jLabel29.setText("Liviano");
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 340, -1, -1));
+
+        jLabel30.setText("Pesado");
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 360, -1, -1));
+
+        jLabel31.setText("Motos");
+        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 380, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 690));
 
@@ -827,11 +849,6 @@ public class facturaSalida extends javax.swing.JFrame {
         mostrarVehiculoFacturar("");
     }//GEN-LAST:event_btnBuscarRegistroActionPerformed
 
-    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-
-        dispose();
-    }//GEN-LAST:event_btnMenuActionPerformed
-
     private void txtCantminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantminActionPerformed
@@ -847,14 +864,12 @@ public class facturaSalida extends javax.swing.JFrame {
     private void btnInsertarFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertarFMouseClicked
       try {
 
-            PreparedStatement pst = cn.prepareStatement("INSERT INTO `factura`( `monto`, `montoextra`, `montoTotal`, `fk_registro`) VALUES (?,?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(monto,montoextra,montoTotal,fk_registro) VALUES (?,?,?,?)");
 
-            pst.setString(1, txtIDregistro.getText());
-            pst.setString(2, txtMonto.getText());
-            pst.setString(3, txtMontoExtra.getText());
-            pst.setString(4, txtTotalPagar.getText());
-            pst.setString(5, txtIDregistro.getText());
-            
+            pst.setString(1, txtMonto.getText());
+            pst.setString(2, txtMontoExtra.getText());
+            pst.setString(3, txtTotalPagar.getText());
+            pst.setString(4, txtIDregistro.getText());
 
             pst.executeUpdate();
 
@@ -862,8 +877,8 @@ public class facturaSalida extends javax.swing.JFrame {
             System.out.print(e);
         }
 
-       txtPlaca.setText(""); 
-       
+        //buscar vehiculo
+        txtPlaca.setText("");
 
         //Guardar pago
         txtMonto.setText("");
@@ -897,6 +912,10 @@ public class facturaSalida extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(this, "Factura guardada");
     }//GEN-LAST:event_btnInsertarFMouseClicked
+
+    private void btnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnmenuMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnmenuMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -939,7 +958,7 @@ public class facturaSalida extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarRegistro;
     private javax.swing.JButton btnCarlcularHoras;
     private javax.swing.JLabel btnInsertarF;
-    private javax.swing.JButton btnMenu;
+    private javax.swing.JPanel btnmenu;
     private javax.swing.JComboBox<String> cbHorario;
     private javax.swing.JComboBox cbVehiculos;
     private javax.swing.JLabel jLabel1;
@@ -962,7 +981,11 @@ public class facturaSalida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

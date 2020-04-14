@@ -21,6 +21,8 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
     public Registro_Vehiculos() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        
         txtRequeridoID.setVisible(false);
         txtRequeridoPlaca.setVisible(false);
         txtRequeridoHora.setVisible(false);
@@ -52,7 +54,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtmenu = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtEstado = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -71,6 +72,8 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         txtIDparametroV = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtFechaI = new com.toedter.calendar.JDateChooser();
+        btnmenu = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +91,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jPanel1.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 150, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setText("Información del vehículo ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, -1, -1));
 
@@ -125,14 +128,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jLabel10.setText("Liviano");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, -1, -1));
 
-        txtmenu.setText("Menú");
-        txtmenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtmenuActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
-
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("Estado");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
@@ -142,7 +137,7 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 120, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel12.setForeground(new java.awt.Color(0, 153, 153));
         jLabel12.setText("Ingrese su ID");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
         jPanel1.add(txtIdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 160, -1));
@@ -210,10 +205,26 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
         txtIDparametroV.setEnabled(false);
         jPanel1.add(txtIDparametroV, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 160, -1));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Usuario");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
         jPanel1.add(txtFechaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 120, -1));
+
+        btnmenu.setBackground(new java.awt.Color(0, 153, 153));
+        btnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnmenuMouseClicked(evt);
+            }
+        });
+        btnmenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel14.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Menú");
+        btnmenu.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 20));
+
+        jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 90, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 580));
 
@@ -271,11 +282,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
 
     }
 
-
-    private void txtmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmenuActionPerformed
-
-        dispose();
-    }//GEN-LAST:event_txtmenuActionPerformed
 
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
@@ -338,6 +344,10 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Registro agregado");
         }
     }//GEN-LAST:event_btnguardarActionPerformed
+
+    private void btnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnmenuMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnmenuMouseClicked
 
     public void mostrarIDTrabajadorV(String valor) {
 
@@ -408,12 +418,14 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnguardar;
+    private javax.swing.JPanel btnmenu;
     private javax.swing.JComboBox cmbTipoV;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -438,7 +450,6 @@ public class Registro_Vehiculos extends javax.swing.JFrame {
     private javax.swing.JLabel txtRequeridoHora;
     private javax.swing.JLabel txtRequeridoID;
     private javax.swing.JLabel txtRequeridoPlaca;
-    private javax.swing.JButton txtmenu;
     // End of variables declaration//GEN-END:variables
   datosP cc = new datosP();
     Connection cn = cc.conexion();

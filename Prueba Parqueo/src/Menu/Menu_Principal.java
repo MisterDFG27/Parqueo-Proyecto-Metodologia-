@@ -17,6 +17,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     public Menu_Principal() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     public void mostrardatosVL(String valor) {
@@ -208,6 +209,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         tbcantliv = new javax.swing.JTable();
         btnActualizar = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         EmpleadoR = new javax.swing.JMenu();
         Vehiculo = new javax.swing.JMenu();
@@ -235,7 +237,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbTotal);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 249, 140));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 249, 240));
 
         tbUsuarioID.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbUsuarioID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -249,21 +251,21 @@ public class Menu_Principal extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(tbUsuarioID);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 249, 60));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 249, 60));
 
         txtCantiTotal.setEnabled(false);
-        jPanel1.add(txtCantiTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 202, 140, 30));
+        jPanel1.add(txtCantiTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 30, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Vehículos en el parqueo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, -1, -1));
 
         txtIDparametro.setEnabled(false);
-        jPanel1.add(txtIDparametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 160, -1));
+        jPanel1.add(txtIDparametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 160, -1));
 
         tbcantm.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbcantm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -329,9 +331,14 @@ public class Menu_Principal extends javax.swing.JFrame {
         });
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 153, 153)));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 370, 150));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 400));
 
         jMenuBar1.setBackground(new java.awt.Color(0, 204, 204));
+        jMenuBar1.setForeground(new java.awt.Color(0, 153, 153));
 
         EmpleadoR.setBackground(new java.awt.Color(255, 255, 255));
         EmpleadoR.setBorder(null);
@@ -409,7 +416,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     private void EmpleadoRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadoRMouseClicked
         Registro_Empleado.Registro_Empleados m = new Registro_Empleado.Registro_Empleados();
         m.setVisible(true);
-
+   
     }//GEN-LAST:event_EmpleadoRMouseClicked
 
     private void VehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VehiculoMouseClicked
@@ -515,6 +522,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

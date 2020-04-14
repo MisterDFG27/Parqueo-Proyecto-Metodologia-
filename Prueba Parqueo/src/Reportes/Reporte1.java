@@ -18,6 +18,7 @@ public class Reporte1 extends javax.swing.JFrame {
     public Reporte1() {
         initComponents();
         setLocationRelativeTo(null);
+      
     }
     
     //Calendario
@@ -255,44 +256,88 @@ public class Reporte1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        btnlimpiar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnmenu1 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtfecha = new com.toedter.calendar.JDateChooser();
         btnbuscar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbmont3 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tbcantm = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tbmont2 = new javax.swing.JTable();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tbcantp = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         tbmont1 = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
         tbcantliv = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tbmont2 = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbcantp = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbmont3 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbcantm = new javax.swing.JTable();
         jScrollPane7 = new javax.swing.JScrollPane();
         tbMontoR = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        txtfecha = new com.toedter.calendar.JDateChooser();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        btnlimpiar = new javax.swing.JButton();
-        btnmenu = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("Motocicletas:");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 110, 20));
+
+        btnlimpiar.setBackground(new java.awt.Color(0, 153, 153));
+        btnlimpiar.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        btnlimpiar.setText("Limpiar");
+        btnlimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlimpiarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 600, 100, 30));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("            Reporte General");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 340, 42));
+
+        btnmenu1.setBackground(new java.awt.Color(0, 153, 153));
+        btnmenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnmenu1MouseClicked(evt);
+            }
+        });
+        btnmenu1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setBackground(new java.awt.Color(67, 81, 141));
+        jLabel28.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Menú");
+        btnmenu1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 20));
+
+        jPanel3.add(btnmenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 90, 40));
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
         jLabel4.setText("Fecha");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 70, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 60, 30));
+
+        txtfecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtfecha.setMaxSelectableDate(new java.util.Date(253370790075000L));
+        jPanel3.add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 180, 40));
 
         btnbuscar.setBackground(new java.awt.Color(0, 153, 153));
         btnbuscar.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -302,78 +347,7 @@ public class Reporte1 extends javax.swing.JFrame {
                 btnbuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 120, 30));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jLabel5.setText("Vehiculo Pesado:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, 20));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jLabel6.setText("Vehiculo Liviano:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 140, 20));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel9.setText("Tipo vehiculo");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 130, 20));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 430, 10));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 430, 10));
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 420, 10));
-
-        tbmont3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tbmont3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tbmont3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(tbmont3);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 90, 60));
-
-        tbcantm.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tbcantm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tbcantm.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(tbcantm);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 90, 60));
-
-        tbmont2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tbmont2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tbmont2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane3.setViewportView(tbmont2);
-
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 90, 60));
-
-        tbcantp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tbcantp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tbcantp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane4.setViewportView(tbcantp);
-
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 90, 60));
+        jPanel3.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 120, 30));
 
         tbmont1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbmont1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -387,7 +361,7 @@ public class Reporte1 extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(tbmont1);
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 90, 60));
+        jPanel3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 90, 60));
 
         tbcantliv.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbcantliv.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -401,7 +375,63 @@ public class Reporte1 extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(tbcantliv);
 
-        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 90, 60));
+        jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 90, 60));
+
+        tbmont2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbmont2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbmont2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(tbmont2);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 90, 60));
+
+        tbcantp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbcantp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbcantp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(tbcantp);
+
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 90, 60));
+
+        tbmont3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbmont3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbmont3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tbmont3);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 490, 90, 60));
+
+        tbcantm.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbcantm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbcantm.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tbcantm);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 90, 60));
 
         tbMontoR.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbMontoR.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -415,47 +445,36 @@ public class Reporte1 extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(tbMontoR);
 
-        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, 100, 50));
+        jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 590, 100, 50));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 153, 153));
         jLabel7.setText("Cierre de caja");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 610, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, -1, -1));
 
-        txtfecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtfecha.setMaxSelectableDate(new java.util.Date(253370790075000L));
-        getContentPane().add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 180, 40));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("Vehiculo Liviano:");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 140, 20));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("Vehiculo Pesado:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, -1, 20));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jLabel3.setText("Motocicletas:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, 110, 20));
+        jSeparator3.setForeground(new java.awt.Color(0, 153, 153));
+        jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 420, 10));
 
-        btnlimpiar.setBackground(new java.awt.Color(0, 153, 153));
-        btnlimpiar.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        btnlimpiar.setText("Limpiar");
-        btnlimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnlimpiarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, 100, 30));
+        jSeparator2.setForeground(new java.awt.Color(0, 153, 153));
+        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 430, 10));
 
-        btnmenu.setText("Menu");
-        btnmenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmenuActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, -1, 30));
+        jSeparator1.setForeground(new java.awt.Color(0, 153, 153));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 560, 430, 10));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("            Reporte General");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 420, 42));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel9.setText("Tipo vehículo");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 150, 40));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 730));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -474,10 +493,9 @@ public class Reporte1 extends javax.swing.JFrame {
       limpiartabla();
     }//GEN-LAST:event_btnlimpiarActionPerformed
 
-    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
-       
+    private void btnmenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnmenu1MouseClicked
         dispose();
-    }//GEN-LAST:event_btnmenuActionPerformed
+    }//GEN-LAST:event_btnmenu1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -518,8 +536,9 @@ public class Reporte1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btnlimpiar;
-    private javax.swing.JButton btnmenu;
+    private javax.swing.JPanel btnmenu1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
