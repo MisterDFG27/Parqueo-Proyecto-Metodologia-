@@ -50,7 +50,7 @@ public class facturaSalida extends javax.swing.JFrame {
         String sql = "";
         if (valor.equals("")) {
             sql = "SELECT id_registo, númeroPlaca, fecha, horaEntrada, fk_tipoVehiculo, horaSalida, fk_estado FROM registro "
-                    + "WHERE númeroPlaca ='" + txtPlaca.getText() + "' and fecha = '" + fechacalendario + "'";
+                    + "WHERE númeroPlaca ='"+txtPlaca.getText()+"' and fecha = '" + fechacalendario + "'";
 
         }
         String[] datos = new String[7];
@@ -527,7 +527,7 @@ public class facturaSalida extends javax.swing.JFrame {
         txtCantHoras = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        cbHorario = new javax.swing.JComboBox<String>();
+        cbHorario = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         cbVehiculos = new javax.swing.JComboBox();
         jLabel18 = new javax.swing.JLabel();
@@ -754,7 +754,7 @@ public class facturaSalida extends javax.swing.JFrame {
         jLabel25.setText("Horario");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, -1));
 
-        cbHorario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Diurno", "Nocturno", "Especial" }));
+        cbHorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diurno", "Nocturno", "Especial" }));
         jPanel1.add(cbHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -847,12 +847,14 @@ public class facturaSalida extends javax.swing.JFrame {
     private void btnInsertarFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertarFMouseClicked
       try {
 
-            PreparedStatement pst = cn.prepareStatement("INSERT INTO factura(monto,montoextra,montoTotal,fk_registro) VALUES (?,?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("INSERT INTO `factura`(`id_factura`, `monto`, `montoextra`, `montoTotal`, `fk_registro`, `totalHoras`) VALUES (?,?,?,?,?,?)");
 
-            pst.setString(1, txtMonto.getText());
-            pst.setString(2, txtMontoExtra.getText());
-            pst.setString(3, txtTotalPagar.getText());
-            pst.setString(4, txtIDregistro.getText());
+            pst.setString(1, txtIDregistro.getText());
+            pst.setString(2, txtMonto.getText());
+            pst.setString(3, txtMontoExtra.getText());
+            pst.setString(4, txtTotalPagar.getText());
+            pst.setString(5, txtIDregistro.getText());
+            pst.setString(6, txtTotHoras.getText());
 
             pst.executeUpdate();
 
@@ -860,8 +862,8 @@ public class facturaSalida extends javax.swing.JFrame {
             System.out.print(e);
         }
 
-        //buscar vehiculo
-        txtPlaca.setText("");
+       txtPlaca.setText(""); 
+       
 
         //Guardar pago
         txtMonto.setText("");
