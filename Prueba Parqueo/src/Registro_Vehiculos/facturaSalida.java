@@ -847,14 +847,14 @@ public class facturaSalida extends javax.swing.JFrame {
     private void btnInsertarFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertarFMouseClicked
       try {
 
-            PreparedStatement pst = cn.prepareStatement("INSERT INTO `factura`(`id_factura`, `monto`, `montoextra`, `montoTotal`, `fk_registro`, `totalHoras`) VALUES (?,?,?,?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("INSERT INTO `factura`( `monto`, `montoextra`, `montoTotal`, `fk_registro`) VALUES (?,?,?,?)");
 
             pst.setString(1, txtIDregistro.getText());
             pst.setString(2, txtMonto.getText());
             pst.setString(3, txtMontoExtra.getText());
             pst.setString(4, txtTotalPagar.getText());
             pst.setString(5, txtIDregistro.getText());
-            pst.setString(6, txtTotHoras.getText());
+            
 
             pst.executeUpdate();
 
